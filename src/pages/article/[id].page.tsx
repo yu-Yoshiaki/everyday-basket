@@ -2,6 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import type { CustomNextPage, GetStaticPaths, GetStaticProps } from "next";
 import { Top } from "src/component/Top";
 import { BlogLayout } from "src/layout";
+import { domToHtml } from "src/lib/domToHtml";
 import { microcms } from "src/lib/microcms";
 
 import type { MicroCMS } from "./index.page";
@@ -47,11 +48,7 @@ const Index: CustomNextPage<{ datas: Content }> = (props) => {
         mt={16}
       >
         <Text textAlign="right">{props.datas.publishedAt.toString()}</Text>
-        <Box
-          dangerouslySetInnerHTML={{
-            __html: `${props.datas.content}`,
-          }}
-        />
+        <Box>{domToHtml(props.datas.content)}</Box>
       </Flex>
     </Box>
   );
