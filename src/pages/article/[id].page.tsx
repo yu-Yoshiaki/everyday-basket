@@ -1,10 +1,10 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import type { CustomNextPage, GetStaticPaths, GetStaticProps } from "next";
-import { Top } from "src/component/Top";
 import { BlogLayout } from "src/layout";
 import { domToHtml } from "src/lib/domToHtml";
 import { microcms } from "src/lib/microcms";
 
+import { Top } from "./component/Top";
 import type { MicroCMS } from "./index.page";
 
 type Content = {
@@ -32,20 +32,24 @@ type Content = {
 
 const Index: CustomNextPage<{ datas: Content }> = (props) => {
   return (
-    <Box textAlign="center" bg={"whtie"} pb={"64px"}>
-      <Top title={props.datas.title} />
+    <Box
+      textAlign="center"
+      bg={"gray.100"}
+      pb={"64px"}
+      px={{ base: "10px", md: "0px" }}
+    >
+      <Top title={props.datas.title} eyecatch={props.datas.eyecatch} />
       <Flex
         flexDirection={"column"}
         maxW={"740px"}
         mx={"auto"}
         gap={8}
         py={"60px"}
-        px={"40px"}
+        px={"20px"}
         rounded={"xl"}
         boxShadow={"base"}
         textAlign={"left"}
         bg={"white"}
-        mt={16}
       >
         <Text textAlign="right">{props.datas.publishedAt.toString()}</Text>
         <Box>{domToHtml(props.datas.content)}</Box>
