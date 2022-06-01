@@ -6,12 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "run-p -l -c --aggregate-output lint:*",
-    "lint:eslint": "eslint --cache .",
-    "lint:prettier": "prettier --check .",
-    "fix": "run-s -l -c fix:eslint fix:prettier",
-    "fix:eslint": "yarn lint:eslint --fix",
-    "fix:prettier": "yarn lint:prettier --write",
+    "lint": "next lint",
+    "prettier": "prettier --check .",
+    "fix": "run-s -l -c fix:lint fix:prettier",
+    "fix:lint": "next lint --fix",
+    "fix:prettier": "prettier --write .",
     "unit": "jest",
     "test": "run-p -l -c --aggregate-output lint:* unit",
     "cypress": "cypress open",
@@ -26,25 +25,20 @@
       "next/babel"
     ]
   },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {},
-      "autoprefixer": {}
-    }
-  },
-  "prettier": {
-    "printWidth": 120
-  },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.1",
+    "@chakra-ui/react": "^2.1.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@headlessui/react": "^1.4.2",
-    "@heroicons/react": "^1.0.5",
-    "@tailwindcss/forms": "0.4.0",
-    "@tailwindcss/line-clamp": "0.3.0",
-    "@tailwindcss/typography": "0.5.0",
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-error-boundary": "3.1.4"
+    "framer-motion": "^6",
+    "microcms-js-sdk": "^2.0.0",
+    "next": "12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-error-boundary": "3.1.4",
+    "react-hook-form": "^7.31.3",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@testing-library/cypress": "8.0.2",
@@ -56,8 +50,6 @@
     "@types/react-test-renderer": "17.0.1",
     "@typescript-eslint/eslint-plugin": "5.8.0",
     "@typescript-eslint/parser": "5.8.0",
-    "autoprefixer": "10.4.0",
-    "babel-jest": "27.4.5",
     "cypress": "9.2.0",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
@@ -65,22 +57,24 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-import-access": "1.0.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "eslint-plugin-tailwindcss": "1.17.2",
     "husky": "7.0.4",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.4.5",
     "lint-staged": "12.1.4",
     "npm-run-all": "4.1.5",
-    "postcss": "8.4.5",
     "prettier": "2.5.1",
     "react-test-renderer": "17.0.2",
     "start-server-and-test": "1.14.0",
-    "tailwindcss": "3.0.7",
     "typescript": "4.5.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "yarn fix:eslint",
-    "*": "yarn fix:prettier"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix .",
+      "prettier --write ."
+    ],
+    "**/*.{json,md,mdx,css,html,yml,yaml,scss}": [
+      "prettier --write ."
+    ]
   },
   "volta": {
     "node": "16.13.1",
