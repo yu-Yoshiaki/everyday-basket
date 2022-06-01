@@ -1,5 +1,4 @@
-import "tailwindcss/tailwind.css";
-
+import { ChakraProvider } from "@chakra-ui/react";
 import type { CustomAppProps } from "next/app";
 import Head from "next/head";
 import { memo } from "react";
@@ -16,7 +15,9 @@ const App = (props: CustomAppProps) => {
       <Head>
         <title>nexst</title>
       </Head>
-      {getLayout(<props.Component {...props.pageProps} />)}
+      <ChakraProvider>
+        {getLayout(<props.Component {...props.pageProps} />)}
+      </ChakraProvider>
     </>
   );
 };

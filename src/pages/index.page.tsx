@@ -1,11 +1,11 @@
 import type { CustomNextPage } from "next";
+import { HomeTop } from "src/component/HomeTop";
 import { BlogLayout } from "src/layout/BlogLayout";
 
 const Root: CustomNextPage = () => {
   return (
     <div>
-      <h2>Root</h2>
-      <button className="p-2">Click me!　更新</button>
+      <HomeTop />
     </div>
   );
 };
