@@ -15,7 +15,7 @@ export const Top = (props: { title: string }) => {
         textAlign={"left"}
         transform={"translateX(-50%) translateY(-50%)"}
         fontWeight={"bold"}
-        fontSize={"4xl"}
+        fontSize={{ base: "2xl", md: "4xl" }}
         color={"black"}
       >
         {props.title}

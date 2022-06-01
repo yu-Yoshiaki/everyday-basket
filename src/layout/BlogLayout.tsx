@@ -9,7 +9,7 @@ export const BlogLayout: CustomLayout = (page) => {
   return (
     <div>
       <Header />
-      <Box as={"main"} minH={"90vh"}>
+      <Box as={"main"} minH={"80vh"}>
         <LayoutErrorBoundary>{page}</LayoutErrorBoundary>
       </Box>
       <Footer />
