@@ -14,7 +14,7 @@ import {
 
 export const HomeTop = () => {
   return (
-    <Container maxW={"7xl"} minH={"90vh"}>
+    <Container maxW={"7xl"} minH={"80vh"}>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
