@@ -5,7 +5,8 @@ import { Top } from "src/component/Top";
 import { useGetWindowSize } from "src/hook/useGetWindowSize";
 import { BlogLayout } from "src/layout";
 
-import { Price } from "./card/Price";
+import { Content } from "./component/Content";
+import { Price } from "./component/Price";
 
 const serviceList = [
   {
@@ -14,6 +15,7 @@ const serviceList = [
     description: "STUDIOを用いたWEB制作サービス（ランディングページ、ブログ）",
     imageSrc: null,
     price: 100000,
+    contents: ["管理がしやすい", "ブログ機能", "費用が安い"],
   },
   {
     tag: "WordPress",
@@ -21,6 +23,7 @@ const serviceList = [
     description: "WordPressを用いたWEB制作サービス(ブログ、コーポレート等)",
     imageSrc: null,
     price: 150000,
+    contents: ["管理がしやすい", "ブログ機能", "費用が安い"],
   },
   {
     tag: "Next.js + microCMS",
@@ -29,24 +32,26 @@ const serviceList = [
       "Next.js + microCMSを用いたWEB制作サービス(ブログ、ニュース、コーポレート等)",
     imageSrc: null,
     price: 400000,
+    contents: ["管理がしやすい", "ブログ機能", "費用が安い"],
   },
 ];
 
 const Service: CustomNextPage = () => {
   const { windowSize } = useGetWindowSize();
   return (
-    <VStack>
+    <VStack bg={"gray.100"}>
       <Top title={"サービス"} />
       <Center>
         <Box>
           {windowSize.width > 480 ? (
-            <HStack display={{ base: "none" }}>
+            <HStack>
               {serviceList.map((data) => {
                 return (
-                  <div key={data.title}>
+                  <VStack key={data.title}>
                     <BlogCard {...data} />
                     <Price price={data.price} />
-                  </div>
+                    <Content contents={data.contents} />
+                  </VStack>
                 );
               })}
             </HStack>
@@ -57,6 +62,7 @@ const Service: CustomNextPage = () => {
                   <div key={data.title}>
                     <BlogCard {...data} />
                     <Price price={data.price} />
+                    <Content contents={data.contents} />
                   </div>
                 );
               })}
