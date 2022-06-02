@@ -13,7 +13,7 @@ const App = (props: CustomAppProps) => {
   return (
     <>
       <Head>
-        <title>nexst</title>
+        <title>A-Release</title>
       </Head>
       <ChakraProvider>
         {getLayout(<props.Component {...props.pageProps} />)}
