@@ -7,32 +7,6 @@ import { microcms } from "src/lib/microcms";
 
 import { Card } from "./component/Card";
 
-// const blogContent = [
-//   {
-//     id: "A0001",
-//     tag: "BLOG",
-//     title: "Next.js + ChakraUI Dashboard",
-//     description:
-//       "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
-//     imageSrc: null,
-//   },
-//   {
-//     id: "A0002",
-//     tag: "BLOG",
-//     title: "Next.js + ChakraUI Dashboard",
-//     description:
-//       "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.brary that gives you the building blocks you need to build your React applications.",
-//     imageSrc: null,
-//   },
-//   {
-//     id: "A0003",
-//     tag: "BLOG",
-//     title: "Next.js + ChakraUI Dashboard",
-//     description: "Chakra UI is a simple, modular and accessible ",
-//     imageSrc: null,
-//   },
-// ];
-
 export type MicroCMS = {
   contents: any[];
   totalCount: number;
