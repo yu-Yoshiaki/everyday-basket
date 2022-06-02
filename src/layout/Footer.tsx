@@ -20,8 +20,8 @@ const SocialButton = (props: {
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
       rounded={"full"}
-      w={8}
-      h={8}
+      w={12}
+      h={12}
       cursor={"pointer"}
       as={"a"}
       href={props.href}
@@ -57,13 +57,13 @@ export const Footer = () => {
         <Text>© 2022 A-Release. All rights reserved</Text>
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>
-            <FaTwitter />
+            <FaTwitter size={20} />
           </SocialButton>
           <SocialButton label={"YouTube"} href={"#"}>
-            <FaYoutube />
+            <FaYoutube size={20} />
           </SocialButton>
           <SocialButton label={"Instagram"} href={"#"}>
-            <FaInstagram />
+            <FaInstagram size={20} />
           </SocialButton>
         </Stack>
       </Container>

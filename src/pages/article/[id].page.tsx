@@ -4,6 +4,7 @@ import { BlogLayout } from "src/layout";
 import { domToHtml } from "src/lib/domToHtml";
 import { microcms } from "src/lib/microcms";
 
+import { SocialShare } from "./component/SocialShare";
 import { Top } from "./component/Top";
 import type { MicroCMS } from "./index.page";
 
@@ -54,6 +55,7 @@ const Index: CustomNextPage<{ datas: Content }> = (props) => {
         <Text textAlign="right">{props.datas.publishedAt.toString()}</Text>
         <Box>{domToHtml(props.datas.content)}</Box>
       </Flex>
+      <SocialShare title={props.datas.title} id={props.datas.id} />
     </Box>
   );
 };

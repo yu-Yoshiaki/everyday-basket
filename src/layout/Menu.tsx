@@ -14,7 +14,6 @@ import { useGetWindowSize } from "src/hook/useGetWindowSize";
 const items = [
   // { href: "/service", label: "サービス" },
   { href: "/article", label: "ブログ" },
-  { href: "/test", label: "テスト" },
   { href: "/contact", label: "お問い合わせ", bg: "blue.300" },
 ];
 
