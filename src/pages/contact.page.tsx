@@ -1,51 +1,55 @@
 import {
   Box,
-  Button,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Input,
-  Textarea,
-  VStack,
+  // Button,
+  // FormControl,
+  // FormErrorMessage,
+  // FormLabel,
+  // Input,
+  // Textarea,
+  // VStack,
 } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
-import { useForm } from "react-hook-form";
-import { SectionTitle } from "src/component/SectionTitle";
+// import { useForm } from "react-hook-form";
+// import { SectionTitle } from "src/component/SectionTitle";
 import { BlogLayout } from "src/layout";
 
-const formItem = [
-  {
-    id: "name",
-    placeholder: "",
-    text: "お名前",
-  },
-  {
-    id: "email",
-    placeholder: "",
-    text: "メールアドレス",
-  },
-  {
-    id: "description",
-    placeholder: "",
-    text: "ご相談内容",
-    textarea: true,
-  },
-];
+// const formItem = [
+//   {
+//     id: "name",
+//     placeholder: "",
+//     text: "お名前",
+//   },
+//   {
+//     id: "email",
+//     placeholder: "",
+//     text: "メールアドレス",
+//   },
+//   {
+//     id: "description",
+//     placeholder: "",
+//     text: "ご相談内容",
+//     textarea: true,
+//   },
+// ];
 
 const Contact: CustomNextPage = () => {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm();
+  // const {
+  //   handleSubmit,
+  //   register,
+  //   formState: { errors, isSubmitting },
+  // } = useForm();
 
-  const onSubmit = () => {
-    window.alert("送信されました。");
-  };
+  // const onSubmit = () => {
+  //   window.alert("送信されました。");
+  // };
 
   return (
     <Box minW="400px" maxW="700px" p="10" marginRight="auto" marginLeft="auto">
-      <SectionTitle titleEn="contact" titleJa="お問い合わせ" />
+      <iframe
+        height="470px"
+        src="https://www.noway-form.com/f/d9ebbf09-7c18-46f7-80c2-58e2f006d045/embed"
+      />
+      {/* <SectionTitle titleEn="contact" titleJa="お問い合わせ" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <VStack>
           {formItem.map((item) => {
@@ -94,7 +98,7 @@ const Contact: CustomNextPage = () => {
         >
           送信
         </Button>
-      </form>
+      </form> */}
     </Box>
   );
 };
