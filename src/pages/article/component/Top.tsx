@@ -2,7 +2,6 @@ import { Box, Text } from "@chakra-ui/react";
 
 type Props = {
   title: string;
-  eyecatch: { url: string; width: number; height: number };
 };
 
 export const Top = (props: Props) => {
