@@ -2,7 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import type { CustomNextPage, GetStaticPaths, GetStaticProps } from "next";
 import { BlogLayout } from "src/layout";
 import { microcms } from "src/lib/microcms";
-import type { MicroCMS, MicrocmsField } from "src/type/microcms";
+import type { Microcms, MicrocmsField } from "src/type/microcms";
 
 import { DomToHtml, SocialShare, Top } from "./component";
 
@@ -14,7 +14,7 @@ const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
       pb={"64px"}
       px={{ base: "10px", md: "0px" }}
     >
-      <Top title={props.datas.title} eyecatch={props.datas.eyecatch} />
+      <Top title={props.datas.title} />
       <Flex
         flexDirection={"column"}
         maxW={"740px"}
@@ -36,7 +36,7 @@ const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const datas = await microcms.get<MicroCMS>({ endpoint: "blogs" });
+  const datas = await microcms.get<Microcms>({ endpoint: "blogs" });
   const paths = datas.contents.map((content) => {
     return { params: { id: content.id } };
   });
@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 export const getStaticProps: GetStaticProps = async (paths) => {
   const { id } = paths.params as { id: string };
-  const datas = await microcms.get<MicroCMS>({
+  const datas = await microcms.get<Microcms>({
     endpoint: "blogs",
     contentId: id,
   });
@@ -57,7 +57,6 @@ export const getStaticProps: GetStaticProps = async (paths) => {
     props: {
       datas,
     },
-    revalidate: 5,
   };
 };
 
