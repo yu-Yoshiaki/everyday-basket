@@ -7,6 +7,7 @@ const nextConfig = {
   pageExtensions: ["page.tsx", "page.ts"],
   reactStrictMode: true,
   poweredByHeader: false,
+  swcMinify: true,
   images: {
     domains: [
       "via.placeholder.com",
@@ -16,4 +17,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
