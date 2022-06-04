@@ -6,7 +6,7 @@ import parse, {
   Element,
 } from "html-react-parser";
 
-export const domToHtml = (html: string) => {
+export const DomToHtml = (html: string) => {
   const options: HTMLReactParserOptions = {
     replace: (domNode) => {
       if (domNode instanceof Element && domNode.type === "tag") {
@@ -42,6 +42,12 @@ export const domToHtml = (html: string) => {
           if (domNode.name === "ul") {
             return <Box px={"10px"}>{domToReact(domNode.children)}</Box>;
           }
+
+          return (
+            <Text as="p" py={1} {...props}>
+              {domToReact(domNode.children)}
+            </Text>
+          );
         }
       }
     },

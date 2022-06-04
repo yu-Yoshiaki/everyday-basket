@@ -12,7 +12,7 @@ import Link from "next/link";
 import { useGetWindowSize } from "src/hook/useGetWindowSize";
 
 const items = [
-  // { href: "/service", label: "サービス" },
+  { href: "/service", label: "サービス" },
   { href: "/article", label: "ブログ" },
   { href: "/contact", label: "お問い合わせ", bg: "blue.300" },
 ];
@@ -26,7 +26,7 @@ const SmartPhone = () => {
         icon={<HamburgerIcon />}
         variant="outline"
       />
-      <MenuList w={"full"}>
+      <MenuList w={"full"} zIndex={5}>
         {items.map(({ href, label, bg }) => {
           return (
             <Link href={href} key={label} passHref>

@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import React from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -54,6 +55,9 @@ export const Footer = () => {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
+        <Link href="/privacy">
+          <a>プライバシーポリシー</a>
+        </Link>
         <Text>© 2022 A-Release. All rights reserved</Text>
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>

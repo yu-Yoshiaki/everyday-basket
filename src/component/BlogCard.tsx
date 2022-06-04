@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
 type BlogContent = {
-  tag: string;
+  tag: string[];
   title: string;
   description: string;
   imageSrc: string | null;
@@ -23,14 +23,22 @@ export const BlogCard = (props: BlogContent) => {
             />
           </Box>
           <Stack>
-            <Text
-              color="blue.500"
-              fontWeight="800"
-              fontSize="xs"
-              letterSpacing="wide"
-            >
-              {props.tag}
-            </Text>
+            <Flex>
+              {props.tag.map((tag, index) => {
+                return (
+                  <Text
+                    key={index}
+                    color="blue.500"
+                    fontWeight="800"
+                    fontSize="xs"
+                    letterSpacing="wide"
+                    mr={"1"}
+                  >
+                    #{tag}
+                  </Text>
+                );
+              })}
+            </Flex>
             <Heading color="gray.700" fontSize="lg" fontFamily="body">
               {props.title}
             </Heading>

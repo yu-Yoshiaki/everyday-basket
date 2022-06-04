@@ -1,9 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import type { CustomAppProps } from "next/app";
+import type { CustomAppPage } from "next/app";
 import Head from "next/head";
-import { memo } from "react";
+import { Suspense } from "react";
 
-const App = (props: CustomAppProps) => {
+const App: CustomAppPage = (props) => {
   const getLayout =
     props.Component.getLayout ||
     ((page) => {
@@ -15,11 +15,13 @@ const App = (props: CustomAppProps) => {
       <Head>
         <title>A-Release</title>
       </Head>
-      <ChakraProvider>
-        {getLayout(<props.Component {...props.pageProps} />)}
-      </ChakraProvider>
+      <Suspense fallback={<div>loading</div>}>
+        <ChakraProvider>
+          {getLayout(<props.Component {...props.pageProps} />)}
+        </ChakraProvider>
+      </Suspense>
     </>
   );
 };
 
-export default memo(App);
+export default App;

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --check .",
@@ -63,6 +63,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "27.4.5",
     "lint-staged": "12.1.4",
+    "next-sitemap": "^3.0.5",
     "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
     "react-test-renderer": "17.0.2",
