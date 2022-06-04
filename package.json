@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && next-sitemap --config sitemap.config.js",
+    "build": "next build && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --check .",
