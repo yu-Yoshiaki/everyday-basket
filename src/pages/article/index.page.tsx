@@ -4,17 +4,11 @@ import Link from "next/link";
 import { Top } from "src/component/Top";
 import { BlogLayout } from "src/layout";
 import { microcms } from "src/lib/microcms";
+import type { Microcms } from "src/type/microcms";
 
-import { Card } from "./component/Card";
+import { Card } from "./component";
 
-export type MicroCMS = {
-  contents: any[];
-  totalCount: number;
-  offset: number;
-  limit: number;
-};
-
-const Blog: CustomNextPage<{ datas: MicroCMS }> = (props) => {
+const Blog: CustomNextPage<{ datas: Microcms }> = (props) => {
   return (
     <div>
       <Top title={"ブログ"} />
@@ -24,7 +18,11 @@ const Blog: CustomNextPage<{ datas: MicroCMS }> = (props) => {
             return (
               <Link href={`/article/${item.id}`} key={item.id} passHref>
                 <GridItem as="a">
-                  <Card {...item} />
+                  <Card
+                    title={item.title}
+                    eyecatch={item.eyecatch}
+                    category={item.category.name}
+                  />
                 </GridItem>
               </Link>
             );
@@ -36,7 +34,7 @@ const Blog: CustomNextPage<{ datas: MicroCMS }> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const datas = await microcms.get<MicroCMS>({ endpoint: "blogs" });
+  const datas = await microcms.get<Microcms>({ endpoint: "blogs" });
   return {
     props: {
       datas,

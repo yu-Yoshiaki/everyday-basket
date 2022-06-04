@@ -6,7 +6,6 @@ export const Top = (props: { title: string }) => {
       position={"relative"}
       height={{ base: "200px", md: "300px" }}
       width={"full"}
-      bg="blue"
     >
       <Text
         position={"absolute"}
@@ -16,7 +15,7 @@ export const Top = (props: { title: string }) => {
         transform={"translateX(-50%) translateY(-50%)"}
         fontWeight={"bold"}
         fontSize={{ base: "2xl", md: "4xl" }}
-        color={"black"}
+        color={"#2b2c30"}
       >
         {props.title}
       </Text>
