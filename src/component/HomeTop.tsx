@@ -50,7 +50,7 @@ export const HomeTop = () => {
           </Heading>
 
           <Container>
-            WEB制作をメイン事業に、東京で活動するフリーランス。
+            WEB制作をメイン事業に、東京で活動するチーム。
             <br />
             オンラインでの活動がメイン。
             <br />
@@ -99,14 +99,12 @@ export const HomeTop = () => {
             overflow={"hidden"}
           >
             <Image
-              alt={"Hero Image"}
+              alt={""}
               fit={"cover"}
               align={"center"}
               w={"100%"}
               h={"100%"}
-              src={
-                "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
-              }
+              src={"/team.jpg"}
             />
           </Box>
         </Flex>
