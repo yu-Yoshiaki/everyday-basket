@@ -11,7 +11,7 @@ import { Card } from "./component";
 const Blog: CustomNextPage<{ datas: Microcms }> = (props) => {
   return (
     <div>
-      <Top title={"ブログ"} />
+      <Top title={"BLOG"} />
       <Center>
         <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>
           {props.datas.contents.map((item) => {

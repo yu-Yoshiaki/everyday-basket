@@ -1,12 +1,10 @@
-import { Box, Center, HStack, VStack } from "@chakra-ui/react";
+import { Center, GridItem, SimpleGrid } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
-import { BlogCard } from "src/component/BlogCard";
-import { Top } from "src/component/Top";
-import { useGetWindowSize } from "src/hook/useGetWindowSize";
+import Link from "next/link";
+import { Top } from "src/component";
 import { BlogLayout } from "src/layout";
 
-import { Content } from "./component/Content";
-import { Price } from "./component/Price";
+import { Card } from "./component/Card";
 
 const serviceList = [
   {
@@ -54,40 +52,23 @@ const serviceList = [
 ];
 
 const Service: CustomNextPage = () => {
-  const { windowSize } = useGetWindowSize();
   return (
-    <VStack bg={"gray.100"} color={"#2b2c30"}>
-      <Top title={"サービス"} />
+    <div>
+      <Top title={"SERVICE"} />
       <Center>
-        <Box>
-          {windowSize.width > 480 ? (
-            <HStack alignItems="start">
-              {serviceList.map((data) => {
-                return (
-                  <VStack key={data.title}>
-                    <BlogCard {...data} />
-                    <Price price={data.price} />
-                    <Content contents={data.contents} />
-                  </VStack>
-                );
-              })}
-            </HStack>
-          ) : (
-            <div>
-              {serviceList.map((data) => {
-                return (
-                  <div key={data.title}>
-                    <BlogCard {...data} />
-                    <Price price={data.price} />
-                    <Content contents={data.contents} />
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </Box>
+        <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>
+          {serviceList.map((item) => {
+            return (
+              <Link href={`/article/${item.title}`} key={item.title} passHref>
+                <GridItem as="a">
+                  <Card {...item} />
+                </GridItem>
+              </Link>
+            );
+          })}
+        </SimpleGrid>
       </Center>
-    </VStack>
+    </div>
   );
 };
 
