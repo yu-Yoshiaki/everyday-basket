@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useGetWindowSize } from "src/hook/useGetWindowSize";
 
 const items = [
+  { href: "/team", label: "TEAM" },
   { href: "/service", label: "SERVICE" },
   { href: "/article", label: "BLOG" },
   { href: "/contact", label: "CONTACT", bg: "blue.300" },
