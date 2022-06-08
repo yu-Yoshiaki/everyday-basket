@@ -14,7 +14,7 @@ type Props = {
 
 export const SocialShare = (props: Props) => {
   const title = `${props.title} / A-Release`;
-  const url = `https://arelease.vercel.app/article/${props.id}`;
+  const url = `https://a-release.com/article/${props.id}`;
   return (
     <Box
       maxW={"740px"}
