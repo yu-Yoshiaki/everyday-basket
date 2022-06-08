@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 export const Top = (props: { title: string }) => {
   return (
@@ -7,7 +7,8 @@ export const Top = (props: { title: string }) => {
       height={{ base: "100px", md: "200px" }}
       width={"full"}
     >
-      <Text
+      <Heading
+        as={"h2"}
         position={"absolute"}
         left={"50%"}
         top={"50%"}
@@ -20,7 +21,7 @@ export const Top = (props: { title: string }) => {
         letterSpacing={3}
       >
         {props.title}
-      </Text>
+      </Heading>
     </Box>
   );
 };
