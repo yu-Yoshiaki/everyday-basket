@@ -1,12 +1,13 @@
+import { VStack } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
-import { HomeTop } from "src/component/HomeTop";
+import { HomeTop } from "src/component";
 import { BlogLayout } from "src/layout/BlogLayout";
 
 const Root: CustomNextPage = () => {
   return (
-    <div>
+    <VStack spacing={"14"}>
       <HomeTop />
-    </div>
+    </VStack>
   );
 };
 

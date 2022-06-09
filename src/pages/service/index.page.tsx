@@ -1,6 +1,6 @@
-import { Center, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { GridItem, SimpleGrid, VStack } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
-import { Top } from "src/component";
+import { Contact, Top } from "src/component";
 import { BlogLayout } from "src/layout";
 
 import { Card } from "./component/Card";
@@ -53,21 +53,20 @@ const serviceList = [
 
 const Service: CustomNextPage = () => {
   return (
-    <div>
+    <VStack spacing={"14"} pb={20}>
       <Top title={"SERVICE"} />
-      <Center>
-        <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>
-          {serviceList.map((item) => {
-            return (
-              <GridItem key={item.title}>
-                <Card {...item} />
-              </GridItem>
-            );
-          })}
-        </SimpleGrid>
-      </Center>
+      <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>
+        {serviceList.map((item) => {
+          return (
+            <GridItem key={item.title}>
+              <Card {...item} />
+            </GridItem>
+          );
+        })}
+      </SimpleGrid>
       <Reference />
-    </div>
+      <Contact />
+    </VStack>
   );
 };
 

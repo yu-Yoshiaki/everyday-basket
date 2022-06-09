@@ -39,7 +39,7 @@ const references = [
 
 export const Reference = () => {
   return (
-    <Center display="flex" flexDir="column" mt={8}>
+    <Center display="flex" flexDir="column">
       <Flex
         alignItems="center"
         justifyContent="center"
