@@ -1,21 +1,27 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { EmailIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { Icon } from "@chakra-ui/icons";
 import {
   Button,
   ButtonGroup,
+  HStack,
   IconButton,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { IoMdBusiness } from "react-icons/io";
+import { MdArticle } from "react-icons/md";
+import { RiServiceLine } from "react-icons/ri";
 import { useGetWindowSize } from "src/hook/useGetWindowSize";
 
 const items = [
-  { href: "/team", label: "TEAM" },
-  { href: "/service", label: "SERVICE" },
-  { href: "/article", label: "BLOG" },
-  { href: "/contact", label: "CONTACT", bg: "blue.300" },
+  { href: "/team", label: "TEAM", icon: IoMdBusiness },
+  { href: "/service", label: "SERVICE", icon: RiServiceLine },
+  { href: "/article", label: "BLOG", icon: MdArticle },
+  { href: "/contact", label: "CONTACT", bg: "blue.300", icon: EmailIcon },
 ];
 
 const SmartPhone = () => {
@@ -28,7 +34,7 @@ const SmartPhone = () => {
         variant="outline"
       />
       <MenuList w={"full"} zIndex={5}>
-        {items.map(({ href, label, bg }) => {
+        {items.map(({ href, label, bg, icon }) => {
           return (
             <Link href={href} key={label} passHref>
               <MenuItem
@@ -39,7 +45,9 @@ const SmartPhone = () => {
                 marginLeft={"auto"}
                 marginRight={"auto"}
               >
-                {label}
+                <HStack>
+                  <Icon as={icon} /> <Text>{label}</Text>
+                </HStack>
               </MenuItem>
             </Link>
           );
