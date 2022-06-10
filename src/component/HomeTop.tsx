@@ -1,3 +1,4 @@
+import { EmailIcon } from "@chakra-ui/icons";
 import type { IconProps } from "@chakra-ui/react";
 import {
   Box,
@@ -5,6 +6,7 @@ import {
   Container,
   Flex,
   Heading,
+  HStack,
   Icon,
   Image,
   Stack,
@@ -71,7 +73,10 @@ export const HomeTop = () => {
             bg={"blue.400"}
             _hover={{ bg: "blue.500" }}
           >
-            お話を聞く
+            <HStack>
+              <EmailIcon />
+              <Text>お話を聞く</Text>
+            </HStack>
           </Button>
         </Stack>
         <Flex

@@ -2,9 +2,7 @@ import { GridItem, SimpleGrid, VStack } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
 import { Contact, Top } from "src/component";
 import { BlogLayout } from "src/layout";
-
-import { Card } from "./component/Card";
-import { Reference } from "./component/Reference";
+import { Card, Others, Reference } from "src/pages/service/component";
 
 const serviceList = [
   {
@@ -55,7 +53,7 @@ const Service: CustomNextPage = () => {
   return (
     <VStack spacing={"14"} pb={20}>
       <Top title={"SERVICE"} />
-      <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>
+      <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }}>
         {serviceList.map((item) => {
           return (
             <GridItem key={item.title}>
@@ -64,6 +62,7 @@ const Service: CustomNextPage = () => {
           );
         })}
       </SimpleGrid>
+      <Others />
       <Reference />
       <Contact />
     </VStack>

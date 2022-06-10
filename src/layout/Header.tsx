@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import Link from "next/link";
-
-import { MenuComponent } from "./Menu";
+import { MenuComponent } from "src/component/Menu";
 
 export const Header = () => {
   return (
