@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const SocialShare = (props: Props) => {
-  const title = `${props.title} / A-Release`;
+  const title = `${props.title} / #AlphaRelease `;
   const url = `https://a-release.com/article/${props.id}`;
   return (
     <Box
