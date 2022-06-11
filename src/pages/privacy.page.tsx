@@ -2,11 +2,13 @@ import { Box, Center, Text } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
 import Link from "next/link";
 import { Top } from "src/component";
+import { Meta } from "src/component";
 import { BlogLayout } from "src/layout";
 
 const Privacy: CustomNextPage = () => {
   return (
     <Box bg={"gray.200"}>
+      <Meta title={`プライバシーポリシー / A-Release企画`} />
       <Top title={"プライバシーポリシー"} />
       <Center w={{ base: "90%", md: "700px" }} mx="auto">
         <Text

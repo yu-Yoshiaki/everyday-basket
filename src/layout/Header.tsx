@@ -10,7 +10,7 @@ export const Header = () => {
           <Link href="/">
             <a>
               <Heading size="md" as={"h1"}>
-                A Release
+                A-Release企画
               </Heading>
             </a>
           </Link>

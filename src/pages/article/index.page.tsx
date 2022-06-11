@@ -1,6 +1,7 @@
 import { Center, GridItem, SimpleGrid } from "@chakra-ui/react";
 import type { CustomNextPage, GetStaticProps } from "next";
 import Link from "next/link";
+import { Meta } from "src/component";
 import { Top } from "src/component/Top";
 import { BlogLayout } from "src/layout";
 import { microcms } from "src/lib/microcms";
@@ -11,6 +12,7 @@ import { Card } from "./component";
 const Blog: CustomNextPage<{ datas: Microcms }> = (props) => {
   return (
     <div>
+      <Meta title={"BLOG / A-Release企画"} />
       <Top title={"BLOG"} />
       <Center>
         <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>

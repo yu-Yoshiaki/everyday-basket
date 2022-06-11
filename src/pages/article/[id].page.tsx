@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import type { CustomNextPage, GetStaticPaths, GetStaticProps } from "next";
+import { Meta } from "src/component";
 import { BlogLayout } from "src/layout";
 import { microcms } from "src/lib/microcms";
 import type { Microcms, MicrocmsField } from "src/type/microcms";
@@ -14,6 +15,7 @@ const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
       pb={"64px"}
       px={{ base: "10px", md: "0px" }}
     >
+      <Meta title={`${props.datas.title} / A-Release企画`} />
       <Top title={props.datas.title} />
       <Flex
         flexDirection={"column"}
