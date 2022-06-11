@@ -58,7 +58,7 @@ export const Footer = () => {
         <Link href="/privacy">
           <a>プライバシーポリシー</a>
         </Link>
-        <Text>© 2022 A-Release. All rights reserved</Text>
+        <Text>© 2022 A-Release企画。 All rights reserved</Text>
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>
             <FaTwitter size={20} />
