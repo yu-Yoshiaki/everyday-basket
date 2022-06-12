@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Code, Text } from "@chakra-ui/react";
 import type { HTMLReactParserOptions } from "html-react-parser";
 import parse, {
   attributesToProps,
@@ -41,6 +41,22 @@ export const DomToHtml = (html: string) => {
           }
           if (domNode.name === "ul") {
             return <Box px={"10px"}>{domToReact(domNode.children)}</Box>;
+          }
+          if (domNode.name === "pre") {
+            return (
+              <Code
+                px={"10px"}
+                {...props}
+                border={"solid 1px #eaedf2"}
+                colorScheme={"whiteAlpha"}
+                bg={"black"}
+                fontSize={{ base: "xs", md: "md" }}
+                py={4}
+                rounded={"lg"}
+              >
+                {domToReact(domNode.children)}
+              </Code>
+            );
           }
 
           return (

@@ -1,17 +1,18 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 type Props = {
   title: string;
 };
 
-export const Top = (props: Props) => {
+export const Title = (props: Props) => {
   return (
     <Box
       position={"relative"}
       height={{ base: "200px", md: "300px" }}
       width={"full"}
     >
-      <Text
+      <Heading
+        as={"h2"}
         zIndex={"1"}
         position={"absolute"}
         left={"50%"}
@@ -25,7 +26,7 @@ export const Top = (props: Props) => {
         mx={"auto"}
       >
         {props.title}
-      </Text>
+      </Heading>
     </Box>
   );
 };

@@ -1,18 +1,29 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  parserOptions: { project: "./tsconfig.json" },
+  parserOptions: {
+    project: "./tsconfig.json",
+  },
   plugins: ["simple-import-sort", "import-access", "cypress"],
   extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:cypress/recommended",
     "next/core-web-vitals",
     "prettier",
+    "plugin:storybook/recommended",
   ],
   rules: {
-    "no-console": ["error", { allow: ["warn", "info", "error"] }],
+    "no-console": [
+      "error",
+      {
+        allow: ["warn", "info", "error"],
+      },
+    ],
     "no-restricted-syntax": [
       "error",
-      { selector: "TSEnumDeclaration", message: "Don't declare enums" },
+      {
+        selector: "TSEnumDeclaration",
+        message: "Don't declare enums",
+      },
     ],
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
@@ -44,22 +55,36 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
-      { prefer: "type-imports" },
+      {
+        prefer: "type-imports",
+      },
     ],
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
+      {
+        varsIgnorePattern: "^_",
+        argsIgnorePattern: "^_",
+      },
     ],
     "@typescript-eslint/naming-convention": [
       "error",
-      { selector: ["typeAlias", "typeParameter"], format: ["PascalCase"] },
-      { selector: ["property", "method"], format: ["camelCase"] },
+      {
+        selector: ["typeAlias", "typeParameter"],
+        format: ["PascalCase"],
+      },
+      {
+        selector: ["property", "method"],
+        format: ["camelCase"],
+      },
       {
         selector: "variable",
         types: ["boolean"],
         format: ["PascalCase"],
         prefix: ["no", "is", "has", "should"],
-        filter: { regex: "^_", match: false },
+        filter: {
+          regex: "^_",
+          match: false,
+        },
       },
     ],
     "jsx-a11y/no-autofocus": "off",
@@ -79,7 +104,10 @@ module.exports = {
         "import/no-default-export": "off",
         "@typescript-eslint/naming-convention": [
           "error",
-          { selector: ["typeAlias", "typeParameter"], format: ["PascalCase"] },
+          {
+            selector: ["typeAlias", "typeParameter"],
+            format: ["PascalCase"],
+          },
           {
             selector: ["classProperty", "typeProperty", "method"],
             format: ["camelCase"],
@@ -98,8 +126,14 @@ module.exports = {
       rules: {
         "@typescript-eslint/naming-convention": [
           "error",
-          { selector: ["typeAlias", "typeParameter"], format: ["PascalCase"] },
-          { selector: ["classProperty", "method"], format: ["camelCase"] },
+          {
+            selector: ["typeAlias", "typeParameter"],
+            format: ["PascalCase"],
+          },
+          {
+            selector: ["classProperty", "method"],
+            format: ["camelCase"],
+          },
           {
             selector: "variable",
             types: ["boolean"],

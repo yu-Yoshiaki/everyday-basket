@@ -5,9 +5,10 @@ import { BlogLayout } from "src/layout";
 import { microcms } from "src/lib/microcms";
 import type { Microcms, MicrocmsField } from "src/type/microcms";
 
-import { DomToHtml, SocialShare, Top } from "./component";
+import { DomToHtml, SocialShare, Title } from "./component";
 
 const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
+  const content = props.datas.content.replace(/\n/g, "<br />");
   return (
     <Box
       textAlign="center"
@@ -16,7 +17,7 @@ const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
       px={{ base: "10px", md: "0px" }}
     >
       <Meta title={`${props.datas.title} / A-Release企画`} />
-      <Top title={props.datas.title} />
+      <Title title={props.datas.title} />
       <Flex
         flexDirection={"column"}
         maxW={"740px"}
@@ -30,7 +31,7 @@ const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
         bg={"white"}
       >
         <Text textAlign="right">{props.datas.publishedAt.toString()}</Text>
-        <Box>{DomToHtml(props.datas.content)}</Box>
+        <Box>{DomToHtml(content)}</Box>
       </Flex>
       <SocialShare title={props.datas.title} id={props.datas.id} />
     </Box>
