@@ -1,14 +1,13 @@
-import { Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 
 import { Content } from "./Content";
-import { Price } from "./Price";
 
 type Props = {
   tag: string[];
   title: string;
   description: string;
   imageSrc: string | null;
-  price: number;
   contents: string[];
 };
 
@@ -16,31 +15,42 @@ export const Card = (props: Props) => {
   return (
     <Flex
       w="340px"
-      bg="white"
       rounded="xl"
-      px={5}
-      py={10}
+      pt={4}
+      pb={10}
       overflow="hidden"
       textAlign="center"
-      // border={"1px skyblue solid"}
-      boxShadow={"0px 1px 2px 1px skyblue"}
+      boxShadow={"md"}
+      bg={"white"}
     >
-      <Stack>
-        <Heading
-          color="gray.700"
-          fontSize="4xl"
-          fontFamily="body"
-          textShadow={"2px 1px skyblue"}
-          pb={8}
-        >
-          {props.title}
-        </Heading>
-        <Text color="gray.600" fontSize="md" textAlign={"left"}>
+      <VStack spacing={8}>
+        <Box w={"80%"} h={"140px"} position="relative">
+          {props.imageSrc ? (
+            <Image
+              src={props.imageSrc}
+              alt={props.title}
+              layout="fill"
+              objectFit="contain"
+            />
+          ) : (
+            <Flex h="full" alignItems="center" justifyContent={"center"}>
+              <Heading
+                color="gray.700"
+                fontSize="4xl"
+                fontFamily="body"
+                textAlign={"center"}
+              >
+                {props.title}
+              </Heading>
+            </Flex>
+          )}
+        </Box>
+
+        <Text color="gray.600" fontSize="md" textAlign={"left"} px={5}>
           {props.description}
         </Text>
-        <Price price={props.price} />
         <Content contents={props.contents} />
-      </Stack>
+      </VStack>
     </Flex>
   );
 };

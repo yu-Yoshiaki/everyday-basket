@@ -9,9 +9,8 @@ export const Contact = () => {
       p="40px"
       fontFamily="body"
       bgGradient={"inherit"}
-      border={"1px"}
-      borderColor="blue.400"
       mx="auto"
+      bg={"white"}
     >
       <VStack spacing={"5"}>
         <Text fontSize="3xl" fontWeight="bold">
@@ -22,7 +21,7 @@ export const Contact = () => {
         </Text>
         <Link href="/contact" passHref>
           <Box as="a" p={5} bg="blue.400" color="white" rounded="lg">
-            お問い合わせページに進む
+            お問い合わせ
           </Box>
         </Link>
       </VStack>

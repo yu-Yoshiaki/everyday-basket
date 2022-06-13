@@ -16,7 +16,7 @@ export const Top = (props: { title: string }) => {
         transform={"translateX(-50%) translateY(-50%)"}
         fontWeight={600}
         fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
-        color={"blue.400"}
+        color={"blue.200"}
         zIndex={2}
         letterSpacing={3}
       >
