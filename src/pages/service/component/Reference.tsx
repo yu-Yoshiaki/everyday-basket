@@ -63,7 +63,7 @@ export const Reference = () => {
         {references.map((item) => {
           return (
             <Link href={item.url} key={item.title} passHref>
-              <GridItem as={"a"}>
+              <GridItem as={"a"} bg={"white"}>
                 <Box w="340px" minH={"330px"} boxShadow="md" pb={8}>
                   <Image
                     src={item.image.src}
