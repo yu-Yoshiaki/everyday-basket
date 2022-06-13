@@ -9,7 +9,6 @@ module.exports = {
     "plugin:cypress/recommended",
     "next/core-web-vitals",
     "prettier",
-    "plugin:storybook/recommended",
   ],
   rules: {
     "no-console": [

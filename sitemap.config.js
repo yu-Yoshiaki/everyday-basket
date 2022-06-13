@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://arelease.vercel.app",
+  siteUrl: "https://a-release.com",
   generateRobotsTxt: true,
   sitemapSize: 7000,
   outDir: "./out",

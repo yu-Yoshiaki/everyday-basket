@@ -4,5 +4,3 @@
 /.eslintrc.js
 /cypress
 /*.cofig.js
-/src/pages/stories/*
-/.storybook
