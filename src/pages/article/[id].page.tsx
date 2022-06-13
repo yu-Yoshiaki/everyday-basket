@@ -16,7 +16,7 @@ const Index: CustomNextPage<{ datas: MicrocmsField }> = (props) => {
       pb={"64px"}
       px={{ base: "10px", md: "0px" }}
     >
-      <Meta title={`${props.datas.title} / A-Release企画`} />
+      <Meta title={`${props.datas.title}｜A-Release企画`} />
       <Title title={props.datas.title} />
       <Flex
         flexDirection={"column"}
