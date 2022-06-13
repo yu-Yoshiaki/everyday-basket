@@ -26,7 +26,7 @@ const teamData = [
 const Team: CustomNextPage = () => {
   return (
     <div>
-      <Meta title={`TEAM / A-Release企画`} />
+      <Meta title={`TEAM｜A-Release企画`} />
       <Top title={"TEAM"} />
       <VStack
         w={{ base: "90%", md: "700px" }}

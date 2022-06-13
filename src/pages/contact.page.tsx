@@ -7,7 +7,7 @@ import { BlogLayout } from "src/layout";
 const Contact: CustomNextPage = () => {
   return (
     <div>
-      <Meta title={`CONTACT / A-Release企画`} />
+      <Meta title={`CONTACT｜A-Release企画`} />
       <Top title={"CONTACT"} />
       <AspectRatio w={{ base: "80%", md: "500px" }} ratio={2 / 3} mx="auto">
         <iframe

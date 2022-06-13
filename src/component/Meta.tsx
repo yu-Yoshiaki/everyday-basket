@@ -6,7 +6,8 @@ type Props = {
 };
 
 export const Meta = (props: Props) => {
-  const defaultTitle = "A-Release企画｜WEB開発";
+  const defaultTitle =
+    "A-Release企画｜Next.jsを使用したWEBアプリケーション開発";
   const defaultDescription =
     "【 Next.jsでの開発承ります 】WEBアプリケーションの開発はA-Release企画まで。";
 

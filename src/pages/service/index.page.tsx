@@ -53,7 +53,7 @@ const serviceList = [
 const Service: CustomNextPage = () => {
   return (
     <div>
-      <Meta title={"SERVICE / A-Release企画"} />
+      <Meta title={"SERVICE｜A-Release企画"} />
 
       <VStack spacing={"14"} pb={20}>
         <Top title={"SERVICE"} />

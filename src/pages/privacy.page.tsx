@@ -8,7 +8,7 @@ import { BlogLayout } from "src/layout";
 const Privacy: CustomNextPage = () => {
   return (
     <Box bg={"gray.200"}>
-      <Meta title={`プライバシーポリシー / A-Release企画`} />
+      <Meta title={`プライバシーポリシー｜A-Release企画`} />
       <Top title={"プライバシーポリシー"} />
       <Center w={{ base: "90%", md: "700px" }} mx="auto">
         <Text
