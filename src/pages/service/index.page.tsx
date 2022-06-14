@@ -14,7 +14,7 @@ import Image from "next/image";
 import { Contact, Top } from "src/component";
 import { Meta } from "src/component";
 import { BlogLayout } from "src/layout";
-import { Card, Reference } from "src/pages/service/component";
+import { Card } from "src/pages/service/component";
 
 const serviceList = [
   {
@@ -61,25 +61,75 @@ const serviceList = [
   },
 ];
 
-const feature = [
-  {
-    text: "WEB開発のためのパッケージが豊富",
-  },
-  { text: "SSR＆SSGのハイブリッド" },
-  { text: "画像ファイル最適化" },
-];
+const Feature = () => {
+  const feature = [
+    {
+      text: "WEB開発のためのパッケージが豊富",
+    },
+    { text: "SSR＆SSGのハイブリッド" },
+    { text: "画像ファイル最適化" },
+  ];
+  return (
+    <>
+      <Text
+        position={"relative"}
+        fontSize={{ base: "3xl", md: "4xl" }}
+        fontWeight={"bold"}
+        color={"blue.100"}
+        _before={{
+          content: `"特徴"`,
+          position: "absolute",
+          top: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          color: "gray.600",
+          fontSize: "xl",
+          zIndex: 0,
+        }}
+        textAlign="center"
+      >
+        Feature
+      </Text>
+
+      <SimpleGrid
+        gap="8"
+        columns={{ md: 3 }}
+        justifyContent={{ base: "center", md: "start" }}
+      >
+        {feature.map((data) => {
+          return (
+            <GridItem key={data.text}>
+              <Flex
+                w={{ base: "240px", md: "200px" }}
+                h={{ base: "240px", md: "200px" }}
+                rounded={"full"}
+                bg="blue.400"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Text px={4} color="white">
+                  {data.text}
+                </Text>
+              </Flex>
+            </GridItem>
+          );
+        })}
+      </SimpleGrid>
+    </>
+  );
+};
 
 const Service: CustomNextPage = () => {
   return (
     <Box bg={"blue.50"}>
       <Meta title={"SERVICE｜A-Release企画"} />
       <Top title={"SERVICE"} />
-      <VStack spacing={{ base: "4", md: "14" }} pb={20}>
+      <VStack spacing={{ base: "8", md: "14" }} pb={20}>
         <SimpleGrid
-          w={"90%"}
+          w={{ md: "90%" }}
           minH={"70vh"}
           rounded={"lg"}
-          p={{ base: 5, md: 20 }}
+          p={{ base: 10, md: 20 }}
           bg={"white"}
           columns={{ md: 3 }}
           row={2}
@@ -87,68 +137,31 @@ const Service: CustomNextPage = () => {
         >
           <GridItem colSpan={2} rowSpan={2}>
             <Flex
-              gap={8}
+              gap={{ base: 14, md: 8 }}
               flexDirection={"column"}
               letterSpacing={2}
               fontFamily={"body"}
               color="gray.600"
             >
-              <Heading as={"h3"}>
-                <Text as={"span"} fontSize={"6xl"} color={"blue.500"}>
+              <Heading as={"h3"} fontSize={{ base: "2xl", md: "3xl" }}>
+                <Text
+                  as={"span"}
+                  fontSize={{ base: "3xl", md: "6xl" }}
+                  color={"blue.500"}
+                >
                   Next.js
                 </Text>
                 を使った
                 <br /> WEBアプリケーション開発
               </Heading>
-
-              <Text fontSize={"2xl"} fontWeight={"bold"}>
+              <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight={"bold"}>
                 Next.jsは、近年のWEB開発現場で採用が増えているWEB開発フレームワークです。
+                <br />
               </Text>
-
-              <Text
-                position={"relative"}
-                fontSize={"4xl"}
-                fontWeight={"bold"}
-                color={"blue.100"}
-                _before={{
-                  content: `"特徴"`,
-                  position: "absolute",
-                  top: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  color: "gray.600",
-                  fontSize: "xl",
-                  zIndex: 0,
-                }}
-                textAlign="center"
-              >
-                Feature
+              <Feature />
+              <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight={"bold"}>
+                このNext.jsと下記サービスを組み合わせることで、多様なアプリケーション開発を実現できます。
               </Text>
-
-              <SimpleGrid
-                gap="8"
-                columns={{ md: 3 }}
-                justifyContent={{ base: "center", md: "start" }}
-              >
-                {feature.map((data) => {
-                  return (
-                    <GridItem key={data.text}>
-                      <Flex
-                        w={{ base: "240px", md: "200px" }}
-                        h={{ base: "240px", md: "200px" }}
-                        rounded={"full"}
-                        bg="blue.300"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Text px={4} color="white">
-                          {data.text}
-                        </Text>
-                      </Flex>
-                    </GridItem>
-                  );
-                })}
-              </SimpleGrid>
             </Flex>
           </GridItem>
 
@@ -169,7 +182,6 @@ const Service: CustomNextPage = () => {
             </Box>
           </GridItem>
         </SimpleGrid>
-
         <Center>
           <Text
             fontSize={{ base: "4xl", md: "5xl" }}
@@ -179,7 +191,7 @@ const Service: CustomNextPage = () => {
             ✖︎
           </Text>
         </Center>
-        <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }}>
+        <SimpleGrid columns={{ md: 4 }} gap={{ base: 8, md: 8 }}>
           {serviceList.map((item) => {
             return (
               <GridItem key={item.title}>
@@ -189,7 +201,7 @@ const Service: CustomNextPage = () => {
           })}
         </SimpleGrid>
         <Divider w={"90%"} />
-        <Reference />
+        <Divider w={"90%"} />
         <Contact />
       </VStack>
     </Box>

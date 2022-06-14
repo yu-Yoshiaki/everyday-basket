@@ -7,12 +7,12 @@ import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
 
 export const BlogLayout: CustomLayout = (page) => {
   return (
-    <div>
+    <Box color={"gray.700"}>
       <Header />
       <Box as={"main"} minH={"80vh"}>
         <LayoutErrorBoundary>{page}</LayoutErrorBoundary>
       </Box>
       <Footer />
-    </div>
+    </Box>
   );
 };
