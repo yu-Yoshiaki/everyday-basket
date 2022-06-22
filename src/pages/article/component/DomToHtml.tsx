@@ -53,6 +53,7 @@ export const DomToHtml = (html: string) => {
                 fontSize={{ base: "xs", md: "md" }}
                 py={4}
                 rounded={"lg"}
+                w={"full"}
               >
                 {domToReact(domNode.children)}
               </Code>
