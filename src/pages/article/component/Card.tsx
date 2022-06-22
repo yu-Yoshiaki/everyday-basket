@@ -5,9 +5,28 @@ import type { BlogContent } from "src/type/microcms";
 export const Card = (props: BlogContent) => {
   return (
     <Flex w="300px">
-      <Box bg="white" boxShadow="base" rounded="xl" p="6" overflow="hidden">
+      <Box
+        bg="white"
+        border={"1px"}
+        borderColor={"gray.200"}
+        rounded="xl"
+        p="6"
+        overflow="hidden"
+        _hover={{
+          transform: "translateY(5px)",
+        }}
+      >
         <Stack>
-          <Box h="200px" mt="-6" mx="-6" pos="relative" bg={"blue.300"}>
+          <Box
+            h="200px"
+            mt="-6"
+            mx="-6"
+            px={"0.5"}
+            pos="relative"
+            bg={props.eyecatch ? "white" : "blue.400"}
+            borderBottom={"1px"}
+            borderColor={"gray.200"}
+          >
             {!props.eyecatch ? (
               <Text
                 pos={"absolute"}
@@ -25,8 +44,6 @@ export const Card = (props: BlogContent) => {
               <Image
                 src={props.eyecatch.url}
                 layout="fill"
-                width="4240"
-                height="2832"
                 alt={"アイキャッチ"}
               />
             )}

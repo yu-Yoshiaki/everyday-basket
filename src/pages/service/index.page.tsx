@@ -201,7 +201,6 @@ const Service: CustomNextPage = () => {
           })}
         </SimpleGrid>
         <Divider w={"90%"} />
-        <Divider w={"90%"} />
         <Contact />
       </VStack>
     </Box>
