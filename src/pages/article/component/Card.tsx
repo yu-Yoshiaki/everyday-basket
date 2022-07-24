@@ -7,7 +7,7 @@ export const Card = (props: BlogContent) => {
       <div className="space-y-4 overflow-hidden rounded-xl border border-gray-200 bg-white pb-6 hover:translate-y-[5px]">
         <div className="relative h-52">
           {!props.eyecatch ? (
-            <p className="text-4xl font-[800] tracking-wide text-white">
+            <p className="flex h-full items-center justify-center text-4xl font-[800] tracking-wide">
               {props.category}
             </p>
           ) : (
