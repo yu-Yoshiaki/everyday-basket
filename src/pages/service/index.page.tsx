@@ -39,7 +39,7 @@ const Feature = () => {
 
 const Service: CustomNextPage<{ data: Microcms<ServiceField> }> = (props) => {
   return (
-    <div className="bg-blue-50">
+    <div className="space-y-8 bg-blue-50">
       <Meta title={"SERVICE｜A-Release企画"} />
       <Top title={"SERVICE"} />
       <div className="grid min-h-[70vh] grid-rows-2 gap-8 rounded-lg bg-white p-10 md:w-[90%] md:grid-cols-3 md:p-20">
@@ -73,9 +73,7 @@ const Service: CustomNextPage<{ data: Microcms<ServiceField> }> = (props) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <p className="text-4xl font-bold text-gray-600 md:text-5xl">✖︎</p>
-      </div>
+
       <div className="grid gap-8 md:grid-cols-2 md:px-10 lg:grid-cols-3">
         {props.data.contents.map((item) => {
           return <Card {...item} key={item.title} />;

@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export const HomeTop = () => {
   return (
-    <div className="grid grid-cols-2 p-20">
-      <div className="flex flex-col space-y-10">
+    <div className="grid gap-y-4 px-5 py-10 md:grid-cols-2 md:p-20">
+      <div className="flex flex-col gap-y-4 md:gap-y-10">
         <h2 className="text-6xl font-semibold">
           <span className="relative text-gray-800 after:absolute after:bottom-1 after:left-0 after:-z-10 after:h-1/3 after:w-full after:bg-blue-400 after:content-['']">
             α-Release,
@@ -32,7 +32,7 @@ export const HomeTop = () => {
         </Link>
       </div>
 
-      <div className="relative h-[300px] w-[600px] overflow-hidden rounded-2xl shadow-2xl">
+      <div className="relative h-[300px] w-full overflow-hidden rounded-2xl shadow-2xl md:w-[600px]">
         <Image alt={""} layout={"fill"} src={"/team.jpg"} objectFit={"cover"} />
       </div>
     </div>
