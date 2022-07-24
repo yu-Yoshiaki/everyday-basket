@@ -20,16 +20,13 @@
     "env": "vc env pull .env.local",
     "prepare": "husky install"
   },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ]
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.1",
-    "@chakra-ui/react": "^2.1.2",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "framer-motion": "^6",
     "html-react-parser": "^1.4.14",
     "microcms-js-sdk": "^2.0.0",
@@ -41,6 +38,10 @@
     "react-share": "^4.4.0"
   },
   "devDependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.4",
     "@testing-library/cypress": "8.0.2",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
@@ -50,6 +51,7 @@
     "@types/react-test-renderer": "17.0.1",
     "@typescript-eslint/eslint-plugin": "5.8.0",
     "@typescript-eslint/parser": "5.8.0",
+    "autoprefixer": "^10.4.7",
     "cypress": "9.2.0",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
@@ -57,15 +59,18 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-import-access": "1.0.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.0",
     "husky": "7.0.4",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.4.5",
     "lint-staged": "12.1.4",
     "next-sitemap": "^3.0.5",
     "npm-run-all": "4.1.5",
+    "postcss": "^8.4.14",
     "prettier": "2.5.1",
     "react-test-renderer": "17.0.2",
     "start-server-and-test": "1.14.0",
+    "tailwindcss": "^3.1.6",
     "typescript": "4.5.4"
   },
   "lint-staged": {

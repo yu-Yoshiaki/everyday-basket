@@ -1,30 +1,17 @@
-import { Box, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 
 export const Contact = () => {
   return (
-    <Box
-      w={{ base: "90%", md: "1000px" }}
-      rounded="lg"
-      p="40px"
-      fontFamily="body"
-      bgGradient={"inherit"}
-      mx="auto"
-      bg={"white"}
-    >
-      <VStack spacing={"5"}>
-        <Text fontSize="3xl" fontWeight="bold">
-          CONTACT
-        </Text>
-        <Text fontSize="xl">
+    <div className="mx-auto w-[90%] rounded-lg bg-white p-[40px] md:w-[1000px]">
+      <div className="flex flex-col space-y-5">
+        <p className="text-3xl font-bold">CONTACT</p>
+        <p className="text-xl">
           開発依頼・お見積り。その他、お問い合わせはこちら。
-        </Text>
+        </p>
         <Link href="/contact" passHref>
-          <Box as="a" p={5} bg="blue.400" color="white" rounded="lg">
-            お問い合わせ
-          </Box>
+          <a className="rounded-lg bg-blue-400 p-5 text-white">お問い合わせ</a>
         </Link>
-      </VStack>
-    </Box>
+      </div>
+    </div>
   );
 };

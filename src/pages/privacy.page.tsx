@@ -1,4 +1,3 @@
-import { Box, Center, Text } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
 import Link from "next/link";
 import { Top } from "src/component";
@@ -7,20 +6,11 @@ import { BlogLayout } from "src/layout";
 
 const Privacy: CustomNextPage = () => {
   return (
-    <Box bg={"gray.200"}>
+    <div className="bg-gray-200">
       <Meta title={`プライバシーポリシー｜A-Release企画`} />
       <Top title={"プライバシーポリシー"} />
-      <Center w={{ base: "90%", md: "700px" }} mx="auto">
-        <Text
-          lineHeight={6}
-          letterSpacing={3}
-          p={"80px"}
-          my={"40px"}
-          rounded={"lg"}
-          bg={"white"}
-          color={"#2b2c30"}
-          boxShadow={"md"}
-        >
+      <div className="mx-auto flex w-[90%] items-center justify-center md:w-[700px]">
+        <p className="my-[40px] rounded-lg bg-white p-[80px] shadow-md">
           当社は、当社のサービスを提供するにあたり取得したユーザーの個人情報等の取扱いについて、以下のとおりプライバシーポリシー(以下「本ポリシー」といいます。)を定めます。
           <br />
           <br />
@@ -88,9 +78,7 @@ const Privacy: CustomNextPage = () => {
           （お問い合わせ先）
           <br />
           <Link href="/contact" passHref>
-            <Box as="a" color="blue.600">
-              お問い合わせフォーム
-            </Box>
+            <a className="text-blue-600">お問い合わせフォーム</a>
           </Link>
           <br />
           <br />
@@ -101,9 +89,9 @@ const Privacy: CustomNextPage = () => {
           当社は、個人情報等の取扱いに関する運用状況を適宜見直し、継続的な改善に努めるものとし、必要に応じて、本ポリシーを変更することがあります。変更した場合には、本サイトに掲載する方法で通知いたします。但し、法令上ご本人の同意が必要となるような内容の変更の場合は、当社所定の方法でご本人の同意を得るものとします。
           <br />
           <br />
-        </Text>
-      </Center>
-    </Box>
+        </p>
+      </div>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import { Box } from "@chakra-ui/react";
 import type { CustomLayout } from "next";
 
 import { Footer } from "./Footer";
@@ -7,12 +6,12 @@ import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
 
 export const BlogLayout: CustomLayout = (page) => {
   return (
-    <Box color={"gray.700"}>
+    <div className="text-gray-700">
       <Header />
-      <Box as={"main"} minH={"80vh"}>
+      <main className="min-h-[80vh]">
         <LayoutErrorBoundary>{page}</LayoutErrorBoundary>
-      </Box>
+      </main>
       <Footer />
-    </Box>
+    </div>
   );
 };

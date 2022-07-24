@@ -1,4 +1,3 @@
-import { Box, Grid, GridItem, Text } from "@chakra-ui/react";
 import * as ReactShare from "react-share";
 
 const config = {
@@ -10,49 +9,38 @@ type Props = {
   title: string;
   size?: number;
   via?: string;
+  hashtag?: string[];
 };
 
 export const SocialShare = (props: Props) => {
-  const title = `${props.title} / #AlphaRelease `;
+  const title = `${props.title}`;
   const url = `https://a-release.com/article/${props.id}`;
   return (
-    <Box
-      maxW={"740px"}
-      mx={"auto"}
-      py={"20px"}
-      px={"20px"}
-      rounded={"xl"}
-      boxShadow={"base"}
-      bg={"white"}
-      mt={8}
-    >
-      <Grid
-        templateRows="repeat(2,0.85fr)"
-        templateColumns="repeat(3, 1fr)"
-        justifyContent={"center"}
-      >
-        <GridItem colSpan={3}>
-          <Text fontSize={"lg"} fontWeight={"semibold"}>
-            - 記事をシェアする -
-          </Text>
-        </GridItem>
+    <div className="mx-auto grid w-full grid-cols-3 gap-8 rounded-xl bg-white py-10 px-20 shadow-md md:max-w-[740px]">
+      <div className="col-span-3">
+        <p className="text-lg font-semibold">- 記事をシェアする -</p>
+      </div>
 
-        <GridItem>
-          <ReactShare.FacebookShareButton url={url}>
-            <ReactShare.FacebookIcon size={props.size ?? config.size} round />
-          </ReactShare.FacebookShareButton>
-        </GridItem>
-        <GridItem>
-          <ReactShare.TwitterShareButton url={url} title={title}>
-            <ReactShare.TwitterIcon size={props.size ?? config.size} round />
-          </ReactShare.TwitterShareButton>
-        </GridItem>
-        <GridItem>
-          <ReactShare.LineShareButton url={url} title={title}>
-            <ReactShare.LineIcon size={props.size ?? config.size} round />
-          </ReactShare.LineShareButton>
-        </GridItem>
-      </Grid>
-    </Box>
+      <div>
+        <ReactShare.FacebookShareButton url={url} quote={title}>
+          <ReactShare.FacebookIcon size={props.size ?? config.size} round />
+        </ReactShare.FacebookShareButton>
+      </div>
+
+      <div>
+        <ReactShare.TwitterShareButton
+          url={url}
+          title={title}
+          hashtags={props.hashtag}
+        >
+          <ReactShare.TwitterIcon size={props.size ?? config.size} round />
+        </ReactShare.TwitterShareButton>
+      </div>
+      <div>
+        <ReactShare.LineShareButton url={url} title={title}>
+          <ReactShare.LineIcon size={props.size ?? config.size} round />
+        </ReactShare.LineShareButton>
+      </div>
+    </div>
   );
 };

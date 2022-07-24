@@ -3,12 +3,13 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
-  plugins: ["simple-import-sort", "import-access", "cypress"],
+  plugins: ["simple-import-sort", "import-access", "cypress", "tailwindcss"],
   extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:cypress/recommended",
     "next/core-web-vitals",
     "prettier",
+    "plugin:tailwindcss/recommended",
   ],
   rules: {
     "no-console": [

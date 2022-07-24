@@ -1,56 +1,30 @@
-import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import type { ServiceField } from "src/type/microcms";
 
 import { Content } from "./Content";
 
-type Props = {
-  tag: string[];
-  title: string;
-  description: string;
-  imageSrc: string | null;
-  contents: string[];
-};
-
-export const Card = (props: Props) => {
+export const Card = (props: ServiceField) => {
   return (
-    <Flex
-      w="340px"
-      rounded="xl"
-      pt={4}
-      pb={10}
-      overflow="hidden"
-      textAlign="center"
-      boxShadow={"md"}
-      bg={"white"}
-    >
-      <VStack spacing={8}>
-        <Box w={"80%"} h={"140px"} position="relative">
-          {props.imageSrc ? (
-            <Image
-              src={props.imageSrc}
-              alt={props.title}
-              layout="fill"
-              objectFit="contain"
-            />
-          ) : (
-            <Flex h="full" alignItems="center" justifyContent={"center"}>
-              <Heading
-                color="gray.700"
-                fontSize="4xl"
-                fontFamily="body"
-                textAlign={"center"}
-              >
-                {props.title}
-              </Heading>
-            </Flex>
-          )}
-        </Box>
+    <div className="flex overflow-hidden rounded-xl bg-white pt-4 pb-10 text-center shadow-md">
+      <div className="relative h-[140px] w-[80%]">
+        {props.imageUrl ? (
+          <Image
+            src={props.imageUrl}
+            alt={props.title}
+            layout="fill"
+            objectFit="contain"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center ">
+            <h3 className="text-center text-4xl text-gray-700">
+              {props.title}
+            </h3>
+          </div>
+        )}
+      </div>
 
-        <Text color="gray.600" fontSize="md" textAlign={"left"} px={5}>
-          {props.description}
-        </Text>
-        <Content contents={props.contents} />
-      </VStack>
-    </Flex>
+      <p className="px-5 text-left text-gray-600">{props.description}</p>
+      <Content contents={props.points} />
+    </div>
   );
 };

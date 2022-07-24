@@ -1,17 +1,17 @@
-import { List, ListIcon, ListItem } from "@chakra-ui/react";
 import { FaCheckCircle } from "react-icons/fa";
+import type { ServiceField } from "src/type/microcms";
 
-export const Content = (props: { contents: string[] }) => {
+export const Content = (props: { contents: ServiceField["points"] }) => {
   return (
-    <List spacing={2} textAlign="start" px={8}>
+    <ul className="space-x-2 px-8 text-start">
       {props.contents.map((content) => {
         return (
-          <ListItem key={content}>
-            <ListIcon as={FaCheckCircle} color="skyblue" />
-            {content}
-          </ListItem>
+          <li key={content.text}>
+            <FaCheckCircle color="skyblue" width={20} height={20} />
+            {content.text}
+          </li>
         );
       })}
-    </List>
+    </ul>
   );
 };
