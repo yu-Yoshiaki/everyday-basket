@@ -1,4 +1,3 @@
-import { VStack } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
 import { HomeTop } from "src/component";
 import { Meta } from "src/component";
@@ -8,9 +7,9 @@ const Root: CustomNextPage = () => {
   return (
     <div>
       <Meta />
-      <VStack spacing={"14"}>
+      <div className="flex flex-col space-y-14">
         <HomeTop />
-      </VStack>
+      </div>
     </div>
   );
 };

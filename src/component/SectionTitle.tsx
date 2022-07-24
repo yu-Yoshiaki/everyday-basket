@@ -1,17 +1,11 @@
-import { Center, Heading, Text, VStack } from "@chakra-ui/react";
-
 export const SectionTitle = (props: { titleEn: string; titleJa: string }) => {
   return (
-    <Center>
-      <VStack spacing="2">
-        <Text color="blue.200" fontSize="20px">
-          {props.titleEn}
-        </Text>
-        <Heading as="h3" size="lg">
-          {props.titleJa}
-        </Heading>
-        <Text color="blue.200" width="90px" borderBottom="2px"></Text>
-      </VStack>
-    </Center>
+    <div className="flex items-center justify-center">
+      <div className="flex flex-row space-y-2">
+        <p className="text-[20px] text-blue-200">{props.titleEn}</p>
+        <h3 className="text-lg">{props.titleJa}</h3>
+        <p className="w-[90px] border-b-2 text-blue-200"></p>
+      </div>
+    </div>
   );
 };

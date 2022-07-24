@@ -1,16 +1,19 @@
-export type Microcms = {
-  contents: MicrocmsField[];
+export type Microcms<T> = {
+  contents: Array<T>;
   totalCount: number;
   offset: number;
   limit: number;
 };
 
-export type MicrocmsField = {
+type CommonMicrocms = {
   id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
+};
+
+export type BlogField = CommonMicrocms & {
   title: string;
   content: string;
   eyecatch?: {
@@ -29,7 +32,18 @@ export type MicrocmsField = {
 };
 
 export type BlogContent = {
-  title: MicrocmsField["title"];
-  eyecatch: MicrocmsField["eyecatch"];
-  category: MicrocmsField["category"]["name"];
+  title: BlogField["title"];
+  eyecatch: BlogField["eyecatch"];
+  category: BlogField["category"]["name"];
+};
+
+export type ServiceField = CommonMicrocms & {
+  tag: string;
+  title: string;
+  description: string;
+  imageUrl?: string;
+  points: {
+    fieldId: "point";
+    text: string;
+  }[];
 };

@@ -3,13 +3,14 @@ import Head from "next/head";
 type Props = {
   title?: string;
   description?: string;
+  ogImage?: string;
 };
 
 export const Meta = (props: Props) => {
-  const defaultTitle =
-    "A-Release企画｜Next.jsを使用したWEBアプリケーション開発";
+  const defaultTitle = "α-Release企画｜小規模事業者向けアプリケーション開発";
   const defaultDescription =
-    "【 Next.jsでの開発承ります 】WEBアプリケーションの開発はA-Release企画まで。";
+    "【 Next.jsでの開発承ります 】アプリケーションの開発はα-Release企画まで。";
+  const defaultOgImgae = "/arelease.png";
 
   return (
     <Head>
@@ -23,7 +24,7 @@ export const Meta = (props: Props) => {
         property="og:description"
         content={props.description ?? defaultDescription}
       />
-      <meta property="og:image" content={`/arelease.png`} />
+      <meta property="og:image" content={props.ogImage ?? defaultOgImgae} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );

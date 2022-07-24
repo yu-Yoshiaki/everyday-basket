@@ -1,4 +1,3 @@
-import { HStack, Text, VStack } from "@chakra-ui/react";
 import type { CustomNextPage } from "next";
 import { Meta } from "src/component";
 import { Top } from "src/component/Top";
@@ -28,31 +27,19 @@ const Team: CustomNextPage = () => {
     <div>
       <Meta title={`TEAM｜A-Release企画`} />
       <Top title={"TEAM"} />
-      <VStack
-        w={{ base: "90%", md: "700px" }}
-        lineHeight={10}
-        mx="auto"
-        bg={"white"}
-        color={"#2b2c30"}
-        letterSpacing={3}
-        fontFamily="body"
-        fontSize={{ base: "lg", md: "2xl" }}
-        fontWeight="semibold"
-      >
+      <div className="mx-auto flex w-[90%] flex-col bg-white text-lg font-semibold leading-10 tracking-wide md:w-[700px] md:text-2xl">
         {teamData.map((data) => {
           return (
-            <HStack
-              w="full"
-              textAlign="left"
-              h={{ md: "70px" }}
+            <div
+              className="flex w-full flex-row text-left md:h-[70px]"
               key={data.label}
             >
-              <Text w={{ base: "100px", md: "200px" }}>{data.label}</Text>
-              <Text w={{ base: "250px", md: "full" }}>{data.value}</Text>
-            </HStack>
+              <p className="w-[100px] md:w-[200px]">{data.label}</p>
+              <p className="w-[250px] md:w-full">{data.value}</p>
+            </div>
           );
         })}
-      </VStack>
+      </div>
     </div>
   );
 };

@@ -1,12 +1,3 @@
-import {
-  Box,
-  Center,
-  Flex,
-  GridItem,
-  Heading,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,51 +30,31 @@ const references = [
 
 export const Reference = () => {
   return (
-    <Center display="flex" flexDir="column">
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        _after={{
-          borderTop: "1px solid #666666",
-          content: `""`,
-          width: { base: "4rem", md: "24rem" },
-        }}
-        _before={{
-          borderTop: "1px solid #666666",
-          content: `""`,
-          width: { base: "4rem", md: "24rem" },
-        }}
-      >
-        <Heading as={"h3"} px={6}>
-          Reference
-        </Heading>
-      </Flex>
+    <div className="flex flex-col items-center justify-center">
+      <div className="items-center justify-center before:w-4 before:border-t before:content-[''] after:w-4 after:border-t after:content-[''] before:md:w-24 after:md:w-24">
+        <h3 className="px-6">Reference</h3>
+      </div>
 
-      <SimpleGrid columns={{ md: 3 }} gap={{ base: 8, md: 8 }} py={8}>
+      <div className="grid gap-8 py-8 md:grid-cols-3">
         {references.map((item) => {
           return (
             <Link href={item.url} key={item.title} passHref>
-              <GridItem as={"a"} bg={"white"}>
-                <Box w="340px" minH={"330px"} boxShadow="md" pb={8}>
+              <a className="grid bg-white">
+                <div className="min-h-[330px] w-[340px] pb-8 shadow-md">
                   <Image
                     src={item.image.src}
                     alt={""}
-                    layout={"responsive"}
-                    width="4240"
-                    height="2232"
+                    layout={"fill"}
+                    objectFit={"cover"}
                   />
-                  <Heading as={"h4"} fontSize={"3xl"} p={4}>
-                    {item.title}
-                  </Heading>
-                  <Text fontFamily="body" px={4}>
-                    {item.description}
-                  </Text>
-                </Box>
-              </GridItem>
+                  <h4 className="p-4 text-3xl">{item.title}</h4>
+                  <p className="px-4">{item.description}</p>
+                </div>
+              </a>
             </Link>
           );
         })}
-      </SimpleGrid>
-    </Center>
+      </div>
+    </div>
   );
 };

@@ -1,5 +1,3 @@
-import { Text } from "@chakra-ui/react";
-
 const priceList = {
   main: { name: "next.js", price: 200000 },
   additional: [
@@ -12,15 +10,9 @@ const priceList = {
 export const Price = () => {
   return (
     <div>
-      <Text
-        color="gray.700"
-        fontSize={{ base: "3xl", md: "3xl" }}
-        fontFamily="body"
-        fontWeight={"bold"}
-        py={4}
-      >
+      <p className="py-4 text-3xl font-bold text-gray-700">
         ¥ {priceList.main.price.toLocaleString()}〜
-      </Text>
+      </p>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import { Box, Code, Text } from "@chakra-ui/react";
 import type { HTMLReactParserOptions } from "html-react-parser";
 import parse, {
   attributesToProps,
@@ -15,55 +14,38 @@ export const DomToHtml = (html: string) => {
         if (domNode.attribs) {
           if (domNode.name === "h2") {
             return (
-              <Text
-                as="h2"
-                fontWeight={"bold"}
-                fontSize={"36px"}
-                py={3}
-                {...props}
-              >
+              <h2 className="py-3 text-[36px] font-bold" {...props}>
                 {domToReact(domNode.children)}
-              </Text>
+              </h2>
             );
           }
           if (domNode.name === "h3") {
             return (
-              <Text
-                as="h3"
-                fontWeight={"semibold"}
-                fontSize={"24px"}
-                py={1}
-                {...props}
-              >
+              <h3 className="py-1 text-[24px] font-semibold" {...props}>
                 {domToReact(domNode.children)}
-              </Text>
+              </h3>
             );
           }
           if (domNode.name === "ul") {
-            return <Box px={"10px"}>{domToReact(domNode.children)}</Box>;
+            return (
+              <div className="px-[10px] ">{domToReact(domNode.children)}</div>
+            );
           }
           if (domNode.name === "pre") {
             return (
-              <Code
-                px={"10px"}
+              <div
+                className="w-full rounded-lg border bg-black px-[10px] py-4 text-xs text-white md:text-base"
                 {...props}
-                border={"solid 1px #eaedf2"}
-                colorScheme={"whiteAlpha"}
-                bg={"black"}
-                fontSize={{ base: "xs", md: "md" }}
-                py={4}
-                rounded={"lg"}
-                w={"full"}
               >
                 {domToReact(domNode.children)}
-              </Code>
+              </div>
             );
           }
 
           return (
-            <Text as="p" py={1} {...props}>
+            <p className="py-1" {...props}>
               {domToReact(domNode.children)}
-            </Text>
+            </p>
           );
         }
       }

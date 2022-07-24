@@ -1,5 +1,3 @@
-import { Icon } from "@chakra-ui/icons";
-import { Center, GridItem, HStack, SimpleGrid, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { FaRegHandPointUp } from "react-icons/fa";
 
@@ -10,22 +8,21 @@ const others = [
 
 export const Others = () => {
   return (
-    <Center display="flex" flexDir="column" px={8}>
-      <HStack spacing={4}>
-        <Icon as={FaRegHandPointUp} w={5} h={5} color="blue.400" />
-        <Text fontSize={{ base: "md", md: "2xl" }} letterSpacing={4}>
-          その他にも下記サービスを使用した開発にも対応可能です。
-        </Text>
-      </HStack>
-      <SimpleGrid columns={{ base: 2, md: 4 }} gap={{ base: 4, md: 8 }} py={8}>
+    <div className="flex flex-col items-center justify-center px-8">
+      <FaRegHandPointUp width={5} height={5} color="blue.400" />
+      <p className="md:text-2xl">
+        その他にも下記サービスを使用した開発にも対応可能です。
+      </p>
+
+      <div className="grid grid-cols-2 gap-4 py-8 md:grid-cols-4 md:gap-8">
         {others.map(({ imageAlt, imageUrl }) => {
           return (
-            <GridItem key={imageAlt} w={{ base: "full", md: "300px" }}>
+            <div className="w-full md:w-[300px]" key={imageAlt}>
               <Image src={imageUrl} alt={imageAlt} width="4240" height="2232" />
-            </GridItem>
+            </div>
           );
         })}
-      </SimpleGrid>
-    </Center>
+      </div>
+    </div>
   );
 };

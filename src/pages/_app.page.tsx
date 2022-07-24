@@ -1,4 +1,5 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import "src/style/global.css";
+
 import type { CustomAppPage } from "next/app";
 import { Suspense } from "react";
 
@@ -12,9 +13,7 @@ const App: CustomAppPage = (props) => {
   return (
     <>
       <Suspense fallback={<div>loading</div>}>
-        <ChakraProvider>
-          {getLayout(<props.Component {...props.pageProps} />)}
-        </ChakraProvider>
+        {getLayout(<props.Component {...props.pageProps} />)}
       </Suspense>
     </>
   );
