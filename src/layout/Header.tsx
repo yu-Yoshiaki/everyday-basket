@@ -13,14 +13,16 @@ const items = [
 
 export const Header = () => {
   return (
-    <header className="flex h-[80px] items-center gap-10 px-8">
+    <header className="flex flex-col items-center divide-y md:flex-row md:gap-10 md:divide-none md:px-8">
       <Link href="/">
-        <a className="hover:border-b-2 hover:border-gray-400">
-          <h1 className="text-lg font-bold">α-Release企画</h1>
+        <a className="flex h-[60px] items-center md:h-[80px] ">
+          <h1 className="text-xl font-bold hover:border-b-2 hover:border-gray-400 md:text-lg">
+            α-Release企画
+          </h1>
         </a>
       </Link>
 
-      <nav className="flex items-center gap-4">
+      <nav className="flex h-[40px] items-center gap-4 md:h-[80px]">
         {items.map(({ href, label }) => {
           return (
             <Link href={href} key={label} passHref>
