@@ -10,7 +10,11 @@ const Index: CustomNextPage<{ datas: BlogField }> = (props) => {
   const content = props.datas.content.replace(/\n/g, "<br />");
   return (
     <div className="space-y-10 bg-gray-100 px-[10px] pb-[64px] text-center md:px-0">
-      <Meta title={`${props.datas.title}｜A-Release企画`} />
+      <Meta
+        title={`${props.datas.title}｜A-Release企画`}
+        description={props.datas.content}
+        ogImage={props.datas.eyecatch?.url}
+      />
       <Title title={props.datas.title} />
       <div className="mx-auto flex max-w-[740px] flex-col gap-8 rounded-xl bg-white py-[60px] px-[20px] text-left shadow-md">
         <p className="text-right">{props.datas.publishedAt.toString()}</p>
