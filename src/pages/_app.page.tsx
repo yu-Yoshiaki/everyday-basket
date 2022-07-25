@@ -28,7 +28,10 @@ const App: CustomAppPage = (props) => {
           property="og:description"
           content="【 Next.jsでの開発承ります 】アプリケーションの開発はα-Release企画まで。"
         />
-        <meta property="og:image" content={"/arelease.png"} />
+        <meta
+          property="og:image"
+          content={"https://a-release.com/arelease.png"}
+        />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
