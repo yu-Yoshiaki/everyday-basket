@@ -4,37 +4,32 @@ import Link from "next/link";
 
 export const HomeTop = () => {
   return (
-    <div className="grid gap-y-4 px-5 py-10 md:grid-cols-2 md:p-20">
-      <div className="flex flex-col gap-y-4 md:gap-y-10">
-        <h2 className="text-6xl font-semibold">
-          <span className="relative text-gray-800 after:absolute after:bottom-1 after:left-0 after:-z-10 after:h-1/3 after:w-full after:bg-blue-400 after:content-['']">
-            α-Release,
-          </span>
+    <div className="min-h-[90vh] px-5 py-10 md:grid-cols-2 md:p-20">
+      <div className="relative">
+        <Image
+          alt={""}
+          layout={"responsive"}
+          src={"/team.jpg"}
+          objectFit={"cover"}
+          width={400}
+          height={200}
+        />
+        <div className="absolute inset-y-0 z-10 bg-gray-600 opacity-50"></div>
+        <h2 className="absolute top-24 left-10 z-20 text-6xl font-semibold text-white">
+          行動の数だけ、
           <br />
-          <span className="text-blue-400">create everywhere!</span>
+          挑戦した分だけ、
+          <br />
+          人生は広がる。
         </h2>
-
-        <div className="container">
-          WEB制作をメイン事業に、東京で活動するチーム。
-          <br />
-          オンラインでの活動がメイン。
-          <br />
-          全国どこでも対応可能。
-          <br />
-          お気軽にお問い合わせください。
-        </div>
-
-        <Link href="contact">
-          <a className="flex w-[200px] items-center justify-center rounded-full bg-blue-400 px-6 py-4 text-lg hover:bg-blue-500">
-            <MailIcon width={20} height={20} color={"white"} />
-            <p className="text-white">お話を聞く</p>
-          </a>
-        </Link>
       </div>
 
-      <div className="relative h-[300px] w-full overflow-hidden rounded-2xl shadow-2xl md:w-[600px]">
-        <Image alt={""} layout={"fill"} src={"/team.jpg"} objectFit={"cover"} />
-      </div>
+      <Link href="contact">
+        <a className="flex w-[200px] items-center justify-center rounded-full bg-blue-400 px-6 py-4 text-lg hover:bg-blue-500">
+          <MailIcon width={20} height={20} color={"white"} />
+          <p className="text-white">お話を聞く</p>
+        </a>
+      </Link>
     </div>
   );
 };

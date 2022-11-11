@@ -6,12 +6,14 @@ import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
 
 export const BlogLayout: CustomLayout = (page) => {
   return (
-    <div className="text-gray-700">
+    <div className="grid grid-cols-[auto,1fr] text-gray-700">
       <Header />
-      <main className="min-h-[80vh]">
-        <LayoutErrorBoundary>{page}</LayoutErrorBoundary>
-      </main>
-      <Footer />
+      <div className="h-screen overflow-y-auto">
+        <main>
+          <LayoutErrorBoundary>{page}</LayoutErrorBoundary>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };

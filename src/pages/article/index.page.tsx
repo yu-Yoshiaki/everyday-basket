@@ -1,6 +1,6 @@
 import type { CustomNextPage, GetStaticProps } from "next";
 import Link from "next/link";
-import { Meta, Top } from "src/component";
+import { Container, Meta } from "src/component";
 import { BlogLayout } from "src/layout";
 import { microcms } from "src/lib/microcms";
 import type { BlogField, Microcms } from "src/type/microcms";
@@ -11,9 +11,8 @@ const Blog: CustomNextPage<{ datas: Microcms<BlogField> }> = (props) => {
   return (
     <div>
       <Meta title={"BLOG｜A-Release企画"} />
-      <Top title={"BLOG"} />
-      <div className="flex items-center justify-center">
-        <div className="grid gap-8 py-8 md:grid-cols-3">
+      <Container title={"BLOG"}>
+        <div className="grid gap-5 md:grid-cols-3">
           {props.datas.contents.map((item) => {
             return (
               <Link href={`/article/${item.id}`} key={item.id} passHref>
@@ -22,13 +21,14 @@ const Blog: CustomNextPage<{ datas: Microcms<BlogField> }> = (props) => {
                     title={item.title}
                     eyecatch={item.eyecatch}
                     category={item.category.name}
+                    publishedAt={item.createdAt}
                   />
                 </a>
               </Link>
             );
           })}
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
