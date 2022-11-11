@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8001",
     "build": "next build && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
@@ -27,6 +27,7 @@
     }
   },
   "dependencies": {
+    "dayjs": "^1.11.6",
     "framer-motion": "^6",
     "html-react-parser": "^1.4.14",
     "microcms-js-sdk": "^2.0.0",

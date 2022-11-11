@@ -35,6 +35,7 @@ export type BlogContent = {
   title: BlogField["title"];
   eyecatch: BlogField["eyecatch"];
   category: BlogField["category"]["name"];
+  publishedAt: BlogField["publishedAt"];
 };
 
 export type ServiceField = CommonMicrocms & {
