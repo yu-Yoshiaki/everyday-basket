@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 type List = {
   name: string;
@@ -46,13 +45,11 @@ export const AppSection = () => {
                 />
               </div>
               <div className="space-y-4">
-                <Link href={item.demoLink}>
-                  <a>
-                    <h4 className="text-2xl font-bold text-blue-500">
-                      {item.name}
-                    </h4>
-                  </a>
-                </Link>{" "}
+                <a href={item.demoLink}>
+                  <h4 className="text-2xl font-bold text-blue-500">
+                    {item.name}
+                  </h4>
+                </a>
                 <p className="w-[80%] text-sm">{item.description}</p>
               </div>
             </div>
