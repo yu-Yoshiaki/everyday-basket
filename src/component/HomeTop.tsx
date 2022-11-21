@@ -15,7 +15,7 @@ export const HomeTop = () => {
           height={200}
         />
         <div className="absolute inset-y-0 z-10 bg-gray-600 opacity-50"></div>
-        <h2 className="absolute top-24 left-10 z-20 text-6xl font-semibold text-white">
+        <h2 className="top-24 left-10 z-20 text-3xl font-semibold lg:absolute lg:text-6xl lg:text-white">
           行動の数だけ、
           <br />
           挑戦した分だけ、
@@ -25,7 +25,7 @@ export const HomeTop = () => {
       </div>
 
       <Link href="contact">
-        <a className="flex w-[200px] items-center justify-center rounded-full bg-blue-400 px-6 py-4 text-lg hover:bg-blue-500">
+        <a className="flex w-[200px] items-center justify-center rounded-full bg-blue-400 py-2 text-lg hover:bg-blue-500 lg:px-6 lg:py-4">
           <MailIcon width={20} height={20} color={"white"} />
           <p className="text-white">お話を聞く</p>
         </a>

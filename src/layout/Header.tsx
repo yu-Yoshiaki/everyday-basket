@@ -14,7 +14,7 @@ const items = [
 
 export const Header = () => {
   return (
-    <header className="grid h-screen w-[280px] grid-rows-[200px,1fr,200px] bg-gray-800 text-white">
+    <header className="grid-rows-[200px,1fr,200px] bg-gray-800 py-4 text-white md:grid md:h-screen md:w-[280px]">
       <Link href="/">
         <a className="flex items-center justify-center ">
           <h1 className="text-center text-3xl font-bold hover:border-b-2 hover:border-gray-400">
@@ -23,7 +23,7 @@ export const Header = () => {
         </a>
       </Link>
 
-      <nav className="flex flex-col px-4 text-left">
+      <nav className="fixed inset-x-0 bottom-0 z-40 flex justify-around bg-gray-800 px-4 text-left md:static md:flex-col ">
         {items.map(({ href, label }) => {
           return (
             <Link href={href} key={label} passHref>
@@ -39,7 +39,7 @@ export const Header = () => {
         })}
       </nav>
 
-      <div className="px-4 font-semibold">
+      <div className="hidden px-4 font-semibold md:block">
         <div className="order-first flex items-center justify-start gap-6 p-5 md:order-none">
           <FaTwitter size={20} className="hover:text-blue-400" />
           <FaYoutube size={20} className="hover:text-red-400" />

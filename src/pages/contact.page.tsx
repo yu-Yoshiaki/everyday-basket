@@ -1,21 +1,20 @@
 import type { CustomNextPage } from "next";
 import { Meta } from "src/component";
-import { Container } from "src/component/Container";
 import { BlogLayout } from "src/layout";
 
 const Contact: CustomNextPage = () => {
   return (
     <div>
       <Meta title={`CONTACT｜A-Release企画`} />
-      <Container title={"CONTACT"}>
+      {/* <Container title={""}> */}
+      <div className="bg-white p-5 md:p-20">
         <iframe
-          src="https://form.run/embed/@arelease-labo-1667108571?embed=direct"
-          frameBorder="0"
-          title="contactform"
-          width={1000}
-          height={1000}
-        ></iframe>
-      </Container>
+          className="w-full border-none"
+          height="737px"
+          src="https://www.noway-form.com/f/539fef0e-a845-4c05-a3ac-de2e619f3075/embed"
+        />
+      </div>
+      {/* </Container> */}
     </div>
   );
 };

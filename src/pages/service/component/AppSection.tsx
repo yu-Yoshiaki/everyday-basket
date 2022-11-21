@@ -21,7 +21,7 @@ const list: List = [
 export const AppSection = () => {
   return (
     <div className="grid gap-10">
-      <h3 className="flex items-center justify-center text-5xl font-bold">
+      <h3 className="flex items-center justify-center text-3xl font-bold md:text-5xl">
         アプリケーション企画、運営
       </h3>
       <p className="text-center font-semibold">
@@ -32,7 +32,7 @@ export const AppSection = () => {
       <div>
         {list.map((item) => {
           return (
-            <div key={item.name} className="grid grid-cols-2 gap-10">
+            <div key={item.name} className="grid gap-10 md:grid-cols-2">
               <div className="rounded-xl">
                 <Image
                   src={item.image as string}
@@ -50,7 +50,7 @@ export const AppSection = () => {
                     {item.name}
                   </h4>
                 </a>
-                <p className="w-[80%] text-sm">{item.description}</p>
+                <p className="text-sm md:w-[80%]">{item.description}</p>
               </div>
             </div>
           );

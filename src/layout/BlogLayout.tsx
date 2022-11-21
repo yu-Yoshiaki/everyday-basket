@@ -6,7 +6,7 @@ import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
 
 export const BlogLayout: CustomLayout = (page) => {
   return (
-    <div className="grid grid-cols-[auto,1fr] text-gray-700">
+    <div className="grid-cols-[auto,1fr] text-gray-700 md:grid">
       <Header />
       <div className="h-screen overflow-y-auto">
         <main>
