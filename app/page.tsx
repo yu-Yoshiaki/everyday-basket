@@ -11,11 +11,14 @@ const Root = () => {
           <div className="relative">
             <Image
               alt={""}
-              layout={"responsive"}
               src={"/team.jpg"}
-              objectFit={"cover"}
-              width={350}
+              width={450}
               height={200}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
             <div className="absolute inset-y-0 z-10 bg-gray-600 opacity-50"></div>
             <h2 className="top-24 left-10 z-20 text-3xl font-semibold lg:absolute lg:text-6xl lg:text-white">
