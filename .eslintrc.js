@@ -46,7 +46,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/newline-after-import": "error",
-    "import/no-default-export": "error",
+    "import/no-default-export": "off",
     "import-access/jsdoc": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
@@ -99,7 +99,11 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["src/pages/**/*.page.tsx", "src/pages/api/**/*.page.ts"],
+      files: [
+        "src/pages/**/*.tsx",
+        "src/pages/api/**/*.ts",
+        "app/**/*.[ts,tsx,jsx,js]",
+      ],
       rules: {
         "import/no-default-export": "off",
         "@typescript-eslint/naming-convention": [
@@ -122,7 +126,7 @@ module.exports = {
       },
     },
     {
-      files: ["src/type/**/*.d.ts"],
+      files: ["src/types/**/*.d.ts", "app/types/**/*.d.ts"],
       rules: {
         "@typescript-eslint/naming-convention": [
           "error",
