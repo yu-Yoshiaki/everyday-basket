@@ -14,7 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "exclude": ["node_modules", ".next", "out", "cypress"],
   "include": [
@@ -22,6 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "next.config.mjs"
+    "next.config.mjs",
+    ".next/types/**/*.ts"
   ]
 }

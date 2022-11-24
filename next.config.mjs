@@ -4,7 +4,6 @@
 const nextConfig = {
   i18n: { locales: ["ja"], defaultLocale: "ja" },
   future: { strictPostcssConfiguration: true },
-  pageExtensions: ["page.tsx", "page.ts"],
   reactStrictMode: true,
   poweredByHeader: false,
   swcMinify: true,
@@ -14,6 +13,9 @@ const nextConfig = {
       "gravatar.com",
       "images.microcms-assets.io",
     ],
+  },
+  experimental: {
+    appDir: true,
   },
 };
 
