@@ -17,6 +17,14 @@ const list: List = [
     demoLink: "https:lplus.vercel.app/lp",
     image: "/operateAccount.png",
   },
+  {
+    name: "Invoice | シンプルな請求書作成ツール",
+    description:
+      "簡単な操作で請求書を作成することができるWEBアプリです。作成した請求書をテンプレートとして保存することもできます。また、プレビュー機能を使用することで、作成した請求書を確認することができます。(実際の印刷少しの違う場合があります。)",
+    feature: ["会員制機能、"],
+    demoLink: "https:simple-invoice.vercel.app",
+    image: "/invoice.png",
+  },
 ];
 
 export const AppSection = () => {
@@ -31,31 +39,34 @@ export const AppSection = () => {
         </>
       }
     >
-      {list.map((item) => {
-        return (
-          <div key={item.name} className="grid gap-10 md:grid-cols-2">
-            <div className="rounded-xl">
-              <Image
-                src={item.image as string}
-                alt=""
-                layout="responsive"
-                objectFit="cover"
-                width={213}
-                height={116}
-                className="rounded-xl"
-              />
+      <div className="space-y-10">
+        {list.map((item) => {
+          return (
+            <div key={item.name} className="grid gap-10 md:grid-cols-2 ">
+              <div className="rounded-xl shadow-md">
+                <Image
+                  src={item.image as string}
+                  alt=""
+                  layout="responsive"
+                  objectFit="cover"
+                  width={213}
+                  height={116}
+                  className="rounded-xl"
+                />
+              </div>
+              <div className="space-y-4">
+                <a href={item.demoLink} target="_black">
+                  <h4 className="text-2xl font-bold text-blue-500">
+                    {item.name}
+                  </h4>
+                </a>
+                <p className="text-sm md:w-[80%]">{item.description}</p>
+              </div>
+              <div className="col-span-2 h-[0.1rem] w-full bg-gray-300"></div>
             </div>
-            <div className="space-y-4">
-              <a href={item.demoLink}>
-                <h4 className="text-2xl font-bold text-blue-500">
-                  {item.name}
-                </h4>
-              </a>
-              <p className="text-sm md:w-[80%]">{item.description}</p>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </Section>
   );
 };
