@@ -4,7 +4,7 @@ import { OemSection } from "app/service/OemSection";
 
 const ServicePage = () => {
   return (
-    <div className="space-y-20 ">
+    <div className="space-y-20 px-44">
       <AppSection />
       <OemSection />
       <Contact />
