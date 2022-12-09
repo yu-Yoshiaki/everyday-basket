@@ -57,7 +57,7 @@ export const AppSection = () => {
               <div className="space-y-4">
                 <a
                   href={item.demoLink}
-                  target="_black"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <h4 className="text-2xl font-bold text-blue-500">
@@ -66,7 +66,7 @@ export const AppSection = () => {
                 </a>
                 <a
                   href={item.demoLink}
-                  target="_black"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-blue-500"
                 >
