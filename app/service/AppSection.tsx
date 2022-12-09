@@ -55,10 +55,22 @@ export const AppSection = () => {
                 />
               </div>
               <div className="space-y-4">
-                <a href={item.demoLink} target="_black">
+                <a
+                  href={item.demoLink}
+                  target="_black"
+                  rel="noopener noreferrer"
+                >
                   <h4 className="text-2xl font-bold text-blue-500">
                     {item.name}
                   </h4>
+                </a>
+                <a
+                  href={item.demoLink}
+                  target="_black"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-500"
+                >
+                  {item.demoLink}
                 </a>
                 <p className="text-sm md:w-[80%]">{item.description}</p>
               </div>
