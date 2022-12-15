@@ -42,7 +42,7 @@ module.exports = {
         checkInlineFunction: true,
       },
     ],
-    "react/destructuring-assignment": ["error", "never"],
+    "react/destructuring-assignment": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/newline-after-import": "error",
@@ -102,7 +102,7 @@ module.exports = {
       files: [
         "pages/**/*.tsx",
         "pages/api/**/*.ts",
-        "app/**/*.{ts,tsx,jsx,js}",
+        "src/**/*.{ts,tsx,jsx,js}",
       ],
       rules: {
         "import/no-default-export": "off",
@@ -126,7 +126,7 @@ module.exports = {
       },
     },
     {
-      files: ["pages/types/**/*.d.ts", "app/types/**/*.d.ts"],
+      files: ["src/types/**/*.d.ts"],
       rules: {
         "@typescript-eslint/naming-convention": [
           "error",

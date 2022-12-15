@@ -14,9 +14,6 @@ const nextConfig = {
       "images.microcms-assets.io",
     ],
   },
-  experimental: {
-    appDir: true,
-  },
 };
 
 export default nextConfig;

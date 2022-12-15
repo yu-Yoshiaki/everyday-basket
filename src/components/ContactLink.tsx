@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export const Contact = () => {
+export const ContactLink = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <Link
-        href="/contact"
+        href="/#contact"
         className="flex rounded-md bg-sky-500 p-6 font-semibold text-white hover:bg-sky-600"
       >
         お問い合わせはこちら

@@ -1,10 +1,14 @@
-import { Section } from "app/service/Section";
+import type { StaticImageData } from "next/image";
 import Image from "next/image";
+import Invoice from "public/invoice.png";
+import LBudy from "public/operateAccount.png";
+
+import { Section } from "./Section";
 
 type List = {
   name: string;
   description: string;
-  image?: string;
+  image?: StaticImageData;
   feature: string[];
   demoLink: string;
 }[];
@@ -15,7 +19,7 @@ const list: List = [
       "LINE公式アカウントの運用をお助け！タグ機能で詳細な顧客管理、友だち追加経路がわかるURL機能など。LINE公式アカウントだけでは難しい機能をL-Buddyがお助けします。",
     feature: ["会員制機能、"],
     demoLink: "https:lplus.vercel.app/lp",
-    image: "/operateAccount.png",
+    image: LBudy,
   },
   {
     name: "Invoice | シンプルな請求書作成ツール",
@@ -23,7 +27,7 @@ const list: List = [
       "簡単な操作で請求書を作成することができるWEBアプリです。作成した請求書をテンプレートとして保存することもできます。また、プレビュー機能を使用することで、作成した請求書を確認することができます。(実際の印刷少しの違う場合があります。)",
     feature: ["会員制機能、"],
     demoLink: "https:simple-invoice.vercel.app",
-    image: "/invoice.png",
+    image: Invoice,
   },
 ];
 
@@ -39,42 +43,34 @@ export const AppSection = () => {
         </>
       }
     >
-      <div className="space-y-10">
+      <div className="space-y-10 py-5">
         {list.map((item) => {
           return (
-            <div key={item.name} className="grid gap-10 md:grid-cols-2 ">
-              <div className="rounded-xl shadow-md">
-                <Image
-                  src={item.image as string}
-                  alt=""
-                  layout="responsive"
-                  objectFit="cover"
-                  width={213}
-                  height={116}
-                  className="rounded-xl"
-                />
-              </div>
+            <div key={item.name} className="grid gap-5 md:grid-cols-2">
+              <Image
+                src={item.image as StaticImageData}
+                alt=""
+                className="rounded-md shadow-md"
+              />
+
               <div className="space-y-4">
                 <a
                   href={item.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h4 className="text-2xl font-bold text-blue-500">
-                    {item.name}
-                  </h4>
+                  <h4 className="font-bold md:text-xl">{item.name}</h4>
                 </a>
                 <a
                   href={item.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-blue-500"
+                  className="text-xs font-semibold"
                 >
                   {item.demoLink}
                 </a>
-                <p className="text-sm md:w-[80%]">{item.description}</p>
+                <p className="text-sm">{item.description}</p>
               </div>
-              <div className="col-span-2 h-[0.1rem] w-full bg-gray-300"></div>
             </div>
           );
         })}

@@ -1,4 +1,3 @@
-import { MailIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { MdArticle } from "react-icons/md";
 import { RiServiceLine } from "react-icons/ri";
@@ -6,28 +5,29 @@ import { RiServiceLine } from "react-icons/ri";
 const items = [
   // { href: "/team", label: "TEAM", icon: IoMdBusiness },
   { href: "/service", label: "SERVICE", icon: RiServiceLine },
-  { href: "/article", label: "BLOG", icon: MdArticle },
-  { href: "/contact", label: "CONTACT", bg: "bg-blue-300", icon: MailIcon },
+  { href: "/blog", label: "BLOG", icon: MdArticle },
 ];
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between px-20 py-5">
+    <header className="flex flex-col items-center justify-between p-5 md:flex-row">
       <Link
         href="/"
-        className="border-b-2 border-white py-2 text-4xl font-bold hover:border-gray-400 md:text-2xl"
+        className="border-b-2 border-white py-2 text-2xl font-bold hover:border-gray-400 md:text-3xl"
       >
-        <h1>α-Release企画</h1>
+        <h1>
+          α-Release企画<span className="inline-block rotate-12">📱</span>
+        </h1>
       </Link>
 
-      <nav className="space-x-4">
+      <nav className="flex justify-center space-x-4 border-b-2 border-gray-400">
         {items.map(({ href, label }) => {
           return (
             <Link
               href={href}
               key={label}
               className={
-                "inline-block border-b-2 border-white py-2 text-lg font-bold text-gray-600 hover:border-gray-500"
+                "inline-block w-[70px] py-2 text-center font-bold text-gray-700 hover:border-gray-500"
               }
             >
               {label}

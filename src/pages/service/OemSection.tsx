@@ -1,5 +1,6 @@
-import { Section } from "app/service/Section";
 import Image from "next/image";
+
+import { Section } from "./Section";
 
 type List = {
   name: string;

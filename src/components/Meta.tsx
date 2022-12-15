@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 type Props = {
   title?: string;
   description?: string;
@@ -11,7 +13,7 @@ export const Meta = (props: Props) => {
   const defaultOgImage = "https://www.a-release.com/arelease.png";
   const pageTitle = `${props.title} | A-Release企画`;
   return (
-    <>
+    <Head>
       <title>{props.title ? pageTitle : defaultTitle}</title>
       <meta
         property="og:title"
@@ -30,6 +32,6 @@ export const Meta = (props: Props) => {
       <meta property="og:image" content={props.ogImage ?? defaultOgImage} />
 
       <meta name="twitter:card" content="summary_large_image" />
-    </>
+    </Head>
   );
 };

@@ -6,11 +6,11 @@ export const Section = (props: {
   children: ReactNode;
 }) => {
   return (
-    <section id={props.title} className="grid gap-10">
-      <h3 className="flex items-center justify-center text-3xl font-bold md:text-5xl">
+    <section id={props.title} className="grid gap-4">
+      <h3 className="border-b-4 border-green-400 text-lg font-bold md:text-2xl">
         {props.title}
       </h3>
-      <p className="text-center font-semibold">{props.description}</p>
+      <p className="text-xs font-medium md:text-lg">{props.description}</p>
       <div>{props.children}</div>
     </section>
   );

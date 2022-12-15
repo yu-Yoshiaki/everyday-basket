@@ -1,30 +1,26 @@
-import type { BlogContent } from "app/types/microcms";
 import dayjs from "dayjs";
 import Image from "next/image";
+import type { BlogContent } from "src/types/microcms";
 
 export const Card = (props: BlogContent) => {
   const publishedAt = dayjs(props.publishedAt).format("YYYY/MM/DD");
   return (
-    <div>
-      <div>
+    <div className="p-4 shadow-xl">
+      <div className="relative h-[180px] ">
         {!props.eyecatch ? (
           <Image
             src={"/arelease.png"}
             alt=""
-            layout="responsive"
-            objectFit="contain"
-            width={213}
-            height={116}
+            style={{ objectFit: "contain" }}
+            fill
             className="rounded-lg bg-white"
           />
         ) : (
           <Image
             src={props.eyecatch.url}
             alt=""
-            layout="responsive"
-            objectFit="contain"
-            width={213}
-            height={116}
+            style={{ objectFit: "contain" }}
+            fill
             className="rounded-lg bg-white"
           />
         )}

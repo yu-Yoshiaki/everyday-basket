@@ -1,19 +1,19 @@
-import "app/styles/global.css";
+import "src/styles/global.css";
 
-import { Footer } from "app/Footer";
-import { Header } from "app/Header";
 import type { AppProps } from "next/app";
 import { memo } from "react";
+import { Footer } from "src/components/Footer";
+import { Header } from "src/components/Header";
 
 const App = (props: AppProps) => {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <props.Component {...props.pageProps} />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
