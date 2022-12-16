@@ -12,7 +12,7 @@ export const Article = ({ datas }: { datas: Microcms<BlogField> }) => {
         <div className="grid gap-5 md:grid-cols-3">
           {datas.contents.map((item) => {
             return (
-              <Link href={`/article/${item.id}`} key={item.id}>
+              <Link href={`/blog/${item.id}`} key={item.id}>
                 <Card
                   title={item.title}
                   eyecatch={item.eyecatch}
