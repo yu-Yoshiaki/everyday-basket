@@ -7,7 +7,7 @@ export const Privacy = () => {
     <>
       <Meta title={"プライバシーポリシー"} />
       <Container title={{ en: "PRIVACY", ja: "プライバシーポリシー" }}>
-        <div className="mx-auto flex w-[90%] items-center justify-center md:w-[700px]">
+        <div className="mx-auto flex w-[90%] items-center justify-center md:w-[800px]">
           <p className="my-[40px] rounded-lg bg-white p-[80px] shadow-md">
             当社は、当社のサービスを提供するにあたり取得したユーザーの個人情報等の取扱いについて、以下のとおりプライバシーポリシー(以下「本ポリシー」といいます。)を定めます。
             <br />
