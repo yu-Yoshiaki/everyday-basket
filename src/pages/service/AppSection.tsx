@@ -18,7 +18,7 @@ const list: List = [
     description:
       "LINE公式アカウントの運用をお助け！タグ機能で詳細な顧客管理、友だち追加経路がわかるURL機能など。LINE公式アカウントだけでは難しい機能をL-Buddyがお助けします。",
     feature: ["会員制機能、"],
-    demoLink: "https:lplus.vercel.app/lp",
+    demoLink: "https://lplus.vercel.app/lp",
     image: LBudy,
   },
   {
@@ -26,7 +26,7 @@ const list: List = [
     description:
       "簡単な操作で請求書を作成することができるWEBアプリです。作成した請求書をテンプレートとして保存することもできます。また、プレビュー機能を使用することで、作成した請求書を確認することができます。(実際の印刷少しの違う場合があります。)",
     feature: ["会員制機能、"],
-    demoLink: "https:simple-invoice.vercel.app",
+    demoLink: "https://simple-invoice.vercel.app",
     image: Invoice,
   },
 ];
