@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { MdArticle } from "react-icons/md";
-import { RiServiceLine } from "react-icons/ri";
 
-const items = [
-  // { href: "/team", label: "TEAM", icon: IoMdBusiness },
-  { href: "/service", label: "SERVICE", icon: RiServiceLine },
-  { href: "/blog", label: "BLOG", icon: MdArticle },
-];
+const items = [{ href: "/blog", label: "BLOG", icon: MdArticle }];
 
 export const Header = () => {
   return (

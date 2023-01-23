@@ -7,11 +7,10 @@ type Props = {
 };
 
 export const Meta = (props: Props) => {
-  const defaultTitle = "α-Release企画｜小規模事業者向けアプリケーション開発";
-  const defaultDescription =
-    "【Next.jsでの開発承ります】アプリケーションの開発はα-Release企画まで。";
-  const defaultOgImage = "https://www.a-release.com/arelease.png";
-  const pageTitle = `${props.title} | A-Release企画`;
+  const defaultTitle = "";
+  const defaultDescription = "";
+  const defaultOgImage = "";
+  const pageTitle = ``;
   return (
     <Head>
       <title>{props.title ? pageTitle : defaultTitle}</title>
