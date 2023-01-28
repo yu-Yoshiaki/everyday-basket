@@ -1,7 +1,7 @@
-import { Root } from "src/pages/root";
+import { CourtList } from "src/pages/court/CourtList";
 
 const IndexPage = () => {
-  return <Root />;
+  return <CourtList />;
 };
 
 export default IndexPage;
