@@ -4,7 +4,7 @@ import type { Maker } from "src/pages/shoes/SelectShoesLayout";
 import { ShoesCardlayout } from "src/pages/shoes/ShoesCardlayout";
 import useSWR from "swr";
 
-export const Shoeslist: FC<{ select: Maker }> = (props) => {
+export const ShoesList: FC<{ select: Maker }> = (props) => {
   const { data: shoes } = useSWR(
     ["/shoes", props.select ?? "all"],
     ([_, key]) => {
