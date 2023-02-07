@@ -7,8 +7,10 @@ type Props = {
 };
 
 export const Meta = (props: Props) => {
-  const defaultTitle = "";
-  const defaultDescription = "";
+  const defaultTitle =
+    "バスケットコートの検索・予約ができるアプリ | エブリデイバスケ";
+  const defaultDescription =
+    "好きな時間にバスケットコートの予約ができるよ。場所探しにもう迷わない。";
   const defaultOgImage = "";
   const pageTitle = ``;
   return (
