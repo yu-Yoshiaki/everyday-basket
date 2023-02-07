@@ -1,6 +1,6 @@
 import type { Dispatch, FC, SetStateAction } from "react";
 import { useState } from "react";
-import { ShoesList } from "src/pages/shoes/Shoeslist";
+// import { ShoesList } from "src/pages/shoes/Shoeslist";
 
 export type Maker = "all" | "NIKE" | "asics" | "adidas" | "UNDER ARMOUR";
 
@@ -67,7 +67,7 @@ export const SelectShoesLayout: FC = () => {
   return (
     <div className="space-y-5">
       <SelectMaker selectMaker={selectMaker} setSelectMaker={setSelectMaker} />
-      <ShoesList select={selectMaker} />
+      {/* <ShoesList select={selectMaker} /> */}
     </div>
   );
 };
