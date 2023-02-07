@@ -1,12 +1,12 @@
 import Link from "next/link";
 import type { FC } from "react";
 import { UserMenu } from "src/components/UserMenu";
-import { useAuth } from "src/libs/auth";
+import { auth } from "src/libs/firebase";
 import { getUserInfo } from "src/libs/user";
 import useSWR from "swr";
 
 export const Header: FC = () => {
-  const { user } = useAuth();
+  const user = auth.currentUser;
   const { data } = useSWR(user && `/court/${user.uid}/userInfo`, () => {
     return getUserInfo(user?.uid as string);
   });
@@ -20,9 +20,7 @@ export const Header: FC = () => {
       </Link>
 
       {user ? (
-        <UserMenu>
-          <div className="">{data?.name ?? "no name"}</div>
-        </UserMenu>
+        <UserMenu>{data?.name ?? "no name"}</UserMenu>
       ) : (
         <div>
           <Link href={"/auth/login"}>ログイン</Link>

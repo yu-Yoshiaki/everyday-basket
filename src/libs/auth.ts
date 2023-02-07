@@ -6,7 +6,7 @@ import { auth } from "src/libs/firebase";
 
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null);
-  const { push } = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -14,14 +14,14 @@ export const useAuth = () => {
         setUser(user);
       } else {
         setUser(null);
-        push("/auth/login");
+        router.push("/auth/login");
       }
     });
 
     return () => {
       unsubscribe();
     };
-  }, [push]);
+  }, [router]);
 
   return { user };
 };
