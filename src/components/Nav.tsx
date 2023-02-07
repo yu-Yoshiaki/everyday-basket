@@ -21,7 +21,7 @@ export const Nav: FC = () => {
           <Link
             key={href}
             href={href}
-            className={`hidden-scrollbar whitespace-nowrap py-4 px-3 font-semibold ${
+            className={`hidden-scrollbar whitespace-nowrap py-2 px-3 font-semibold ${
               router.asPath === href && "border-b-2 border-blue-900"
             }`}
           >

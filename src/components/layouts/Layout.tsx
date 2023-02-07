@@ -5,7 +5,7 @@ import { Nav } from "src/components/Nav";
 
 export const Layout: CustomLayout = (page) => {
   return (
-    <div>
+    <div className="text-gray-700">
       <Header />
       <Nav />
       <main className="min-h-screen">{page}</main>
