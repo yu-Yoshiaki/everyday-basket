@@ -1,10 +1,16 @@
 import Link from "next/link";
-import { MdArticle } from "react-icons/md";
+import type { FC } from "react";
 import { UserMenu } from "src/components/UserMenu";
+import { useAuth } from "src/libs/auth";
+import { getUserInfo } from "src/libs/user";
+import useSWR from "swr";
 
-const account = { name: "好明", label: "BLOG", icon: MdArticle };
+export const Header: FC = () => {
+  const { user } = useAuth();
+  const { data } = useSWR(user && `/court/${user.uid}/userInfo`, () => {
+    return getUserInfo(user?.uid as string);
+  });
 
-export const Header = () => {
   return (
     <header className="flex items-center justify-between p-5">
       <Link href="/">
@@ -13,7 +19,16 @@ export const Header = () => {
         </h1>
       </Link>
 
-      <UserMenu>{account.name}</UserMenu>
+      {user ? (
+        <UserMenu>
+          <div className="">{data?.name ?? "no name"}</div>
+        </UserMenu>
+      ) : (
+        <div>
+          <Link href={"/auth/login"}>ログイン</Link>
+          <Link href={"/auth/signup"}>登録</Link>
+        </div>
+      )}
     </header>
   );
 };

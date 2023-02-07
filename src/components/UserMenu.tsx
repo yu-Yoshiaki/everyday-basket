@@ -1,8 +1,11 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
+import { signOut } from "firebase/auth";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import { Fragment, useState } from "react";
+import { useAuth } from "src/libs/auth";
+import { auth } from "src/libs/firebase";
 
 const items = [
   {
@@ -43,13 +46,18 @@ const items = [
   },
 ];
 
-export const UserMenu = (props: { children: ReactNode }) => {
+export const UserMenu: FC<{ children: ReactNode }> = (props) => {
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleIsOpen = () => {
     setIsOpen((pre) => {
       return !pre;
     });
+  };
+
+  const handleSignout = () => {
+    return signOut(auth);
   };
 
   return (
@@ -88,7 +96,7 @@ export const UserMenu = (props: { children: ReactNode }) => {
                       <div className="border-b px-4 sm:px-6">
                         <Dialog.Title className={"flex items-center"}>
                           <Link
-                            href={"/user/id/info"}
+                            href={`/user/${user?.uid}/info`}
                             onClick={handleIsOpen}
                             className="flex items-center gap-2 text-lg font-medium text-gray-900"
                           >
@@ -103,7 +111,9 @@ export const UserMenu = (props: { children: ReactNode }) => {
                           {items.map(({ name }) => {
                             return <div key={name}>{name}</div>;
                           })}
+                          <button onClick={handleSignout}>ログアウト</button>
                         </div>
+
                         {/* /End replace */}
                       </div>
                     </div>

@@ -13,11 +13,13 @@ import { db } from "src/libs/firebase";
 
 export type Shoes = {
   id?: string;
-  maker: string;
-  image: string;
-  name: string;
+  maker?: string;
+  image?: string;
+  name?: string;
   model?: string;
+  createdNum?: string;
   color?: string;
+  url: string;
 };
 
 export const getAllShoes = async () => {
@@ -59,14 +61,27 @@ export const getOneShoe = async (shoesId: string) => {
   } as Shoes;
 };
 
+export const getUserUseShoes = async (shoesIds: string[]) => {
+  const colRef = collection(db, "shoes");
+  const q = query(colRef, where("id", "in", shoesIds));
+  const snapShot = await getDocs(q);
+  return snapShot.docs.map((doc) => {
+    return {
+      ...doc.data(),
+    } as Shoes;
+  });
+};
+
 export const createOneShoe = async (data: Shoes) => {
-  const ref = doc(collection(db, "shoes"));
-  const id = ref.id;
+  const docRef = doc(collection(db, "shoes"));
+  const id = docRef.id;
+
   const newData = {
     ...data,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
     id,
   };
-  await setDoc(ref, newData);
+
+  await setDoc(docRef, newData);
 };
