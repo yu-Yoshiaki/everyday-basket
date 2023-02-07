@@ -2,8 +2,9 @@ import type { Dispatch, FC, SetStateAction } from "react";
 import { useState } from "react";
 import { Shoeslist } from "src/pages/shoes/Shoeslist";
 
-const makers: Maker[] = ["asics", "NIKE", "adidas", "UNDER ARMOUR"];
 export type Maker = "all" | "NIKE" | "asics" | "adidas" | "UNDER ARMOUR";
+
+const makers: Maker[] = ["asics", "NIKE", "adidas", "UNDER ARMOUR"];
 
 const SelectButton: FC<{
   text: Maker;
