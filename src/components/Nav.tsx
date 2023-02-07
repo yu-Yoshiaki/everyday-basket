@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import type { FC } from "react";
 
 const menu = [
   { text: "コート", href: "/" },
@@ -10,7 +11,7 @@ const menu = [
   { text: "バッシュ", href: "/shoes" },
 ];
 
-export const Nav = () => {
+export const Nav: FC = () => {
   const router = useRouter();
 
   return (

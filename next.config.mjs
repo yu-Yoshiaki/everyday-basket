@@ -12,6 +12,7 @@ const nextConfig = {
       "via.placeholder.com",
       "gravatar.com",
       "images.microcms-assets.io",
+      "firebasestorage.googleapis.com",
     ],
   },
 };

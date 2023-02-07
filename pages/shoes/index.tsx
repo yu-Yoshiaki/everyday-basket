@@ -1,7 +1,11 @@
-import { ShoesList } from "src/pages/shoes/ShoesList";
+import type { CustomNextPage } from "next";
+import { Layout } from "src/components/layouts/Layout";
+import { Shoes } from "src/pages/shoes";
 
-const ShoesListPage = () => {
-  return <ShoesList />;
+const ShoesPage: CustomNextPage = () => {
+  return <Shoes />;
 };
 
-export default ShoesListPage;
+ShoesPage.getLayout = Layout;
+
+export default ShoesPage;
