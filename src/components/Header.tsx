@@ -12,9 +12,9 @@ export const Header: FC = () => {
   });
 
   return (
-    <header className="flex items-center justify-between p-5">
+    <header className="flex items-center justify-between px-4 pt-4 pb-2">
       <Link href="/">
-        <h1 className="py-2 text-2xl font-bold md:text-3xl">
+        <h1 className="text-2xl font-bold md:text-3xl">
           <span className="inline-block">🏀</span>エブリデイバスケ
         </h1>
       </Link>
@@ -22,9 +22,13 @@ export const Header: FC = () => {
       {user ? (
         <UserMenu>{data?.name ?? "no name"}</UserMenu>
       ) : (
-        <div>
-          <Link href={"/auth/login"}>ログイン</Link>
-          <Link href={"/auth/signup"}>登録</Link>
+        <div className="flex gap-2">
+          <Link href={"/auth/login"} className="text-blue-400">
+            ログイン
+          </Link>
+          <Link href={"/auth/signup"} className="text-green-400">
+            登録
+          </Link>
         </div>
       )}
     </header>
